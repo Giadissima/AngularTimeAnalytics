@@ -1,0 +1,60 @@
+$transparent-green: rgba(0, 131, 0, 0.32);
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background-color: green;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  padding: 1%;
+  flex-wrap: nowrap;
+}
+
+#logo{
+  width: 9rem;
+  height: 100%;
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 2%;
+  div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+  }
+  width: 30%;
+  height: 90%;
+  img{
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.align-zoom{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  
+}
