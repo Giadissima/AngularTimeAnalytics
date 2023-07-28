@@ -3,16 +3,12 @@ $green: #44b182;
 $font: 'Inter var', sans-serif;
 
 .nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   position: fixed;
-  width: 100%;
   z-index: 9999;
   background-color: $green;
   top: 0;
   left: 0;
-  height: 3rem;
+  height: 43px !important;
   padding: 1%;
   flex-wrap: nowrap;
 }
@@ -40,8 +36,8 @@ $font: 'Inter var', sans-serif;
     justify-content: center;
     flex-wrap: nowrap;
   }
-  width: 30%;
-  height: 90%;
+  width: 25%;
+  height: 70%;
   img{
     // TODO non capisco perché, mettendo qua un border-radius, viene l'angolo squadrato e più di un tot non si stonda
     height: 3rem;
