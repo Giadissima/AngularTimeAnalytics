@@ -1,55 +1,86 @@
-.main-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.back-button{
-  gap: 0.8%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: black;
-  img{
-    width: 2%;
+  .main-container {
+    align-items: flex-start !important;
+    justify-content: flex-start;
   }
-}
 
-.interval-flexbox{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  flex: auto;
-  flex-wrap: wrap;
-  gap: 6%;
-  div{
+  .back-button {
+    gap: 0.8%;
+    text-decoration: none;
+    color: black;
+
+    img {
+      width: 2%;
+    }
+  }
+
+  .interval-flexbox {
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    gap: 6%;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2%;
+
+    }
+  }
+
+  .interval-preset {
+    width: 40%;
+
+    p {
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    button {
+      width: 9rem;
+      height: 2rem;
+      white-space: nowrap;
+    }
+  }
+
+  .interval-date-time {
+    select {
+      height: 100%; // TODO non fa niente, controllare
+    }
+  }
+
+  button {
+    background-color: white;
+    padding: 1%;
+    border-radius: 0.3rem;
+    box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.3);
+    border: none;
+  }
+
+  .row-flexbox {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1%;
-    height: 100%;
-    
-  }
-}
-
-.interval-preset{
-  width: 40%;
-  p{
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-  button{
+    justify-content: center;
     width: 100%;
-    white-space: nowrap;
+    height: 100%;
   }
-}
+
+  .column-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .chart-person {
+    width: 60%;
+    height: 14%;
+
+  }
+
+  .torta-person {
+    width: 20%;
+    height: 14%;
+  }

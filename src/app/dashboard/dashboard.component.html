@@ -1,7 +1,7 @@
-<div class="main-container">
+<div class="column-flexbox main-container">
   <a href="" class="back-button"><img src="assets/arrow_back.png" alt=""> Indietro</a>
-  <div class="interval-flexbox">
-    <div class="interval-preset">
+  <div class="row-flexbox interval-flexbox">
+    <div class="row-flexbox interval-preset">
       <p>Quick preset:</p>
       <button>Ultima ora</button>
       <button>Oggi</button>
@@ -9,7 +9,7 @@
       <button>Ultima settimana</button>
       <button>Ultimo mese</button>
     </div>
-    <div class="interval-date-time">
+    <div class="row-flexbox interval-date-time">
       <!-- TODO guardare come mettere l'icona -->
       <input type="text" placeholder="Intervallo temporale - Fine">
       <select name="" id="">
@@ -20,8 +20,8 @@
         <option>8:00</option>
         <option>6:00</option>
       </select>
-    </div>
-    <div class="interval-date-time">
+    </div> 
+    <div class="row-flexbox interval-date-time">
       <input type="text" placeholder="Intervallo temporale - Fine">
       <select name="" id="">
         <!-- TODO fare un ngfor con Angular -->
@@ -32,5 +32,24 @@
         <option>6:00</option>
       </select>
     </div>
+    <div class="row-flexbox interval-time-flexbox">
+      <p>Intervallo:</p>
+      <select name="" id="">
+        <!-- TODO fare un ngfor con Angular -->
+        <option>1 ora</option>
+        <option>2 ore</option>
+        <option>3 ore</option>
+        <option>4 ore</option>
+        <option>5 ore</option>
+      </select>
+    </div>
+  </div>
+  <div class="row-flexbox chart-person-div">
+    <img class="chart-person" src="assets/chart-persone.png" alt="">
+    <img class="torta-person" src="assets/torta-persone.png" alt="">
+  </div>
+  <div class="row-flexbox chart-alarm-div">
+    <img class="chart-person" src="assets/chart-allarmi.png" alt="">
+    <img class="torta-person" src="assets/torta-allarmi.png" alt="">
   </div>
 </div>
