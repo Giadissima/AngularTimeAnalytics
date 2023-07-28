@@ -1,4 +1,6 @@
 $green: #44b182;
+// TODO vedere perché non cambia il font
+$font: 'Inter var', sans-serif;
 
 .nav {
   display: flex;
@@ -45,4 +47,8 @@ $green: #44b182;
     height: 3rem;
     width: 3rem;
   }
+}
+
+p{
+  font-family: $font;
 }
