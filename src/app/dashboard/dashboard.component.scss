@@ -8,14 +8,15 @@
     text-decoration: none;
     color: black;
 
-    img {
-      width: 2%;
-    }
   }
 
   .interval-flexbox {
+    border:1px solid black;
     justify-content: flex-start !important;
-    flex-wrap: wrap;
+    align-items: flex-start !important;
+    flex-flow: row wrap;
+    width: 100%;
+    max-height:max-content;
     gap: 6%;
 
     div {
@@ -29,8 +30,9 @@
   }
 
   .interval-preset {
+    border:1px solid red;
     width: 40%;
-
+    max-height: 40px;
     p {
       font-size: 1rem;
       white-space: nowrap;
@@ -44,8 +46,10 @@
   }
 
   .interval-date-time {
-    select {
-      height: 100%; // TODO non fa niente, controllare
+    border:1px solid blue;
+    width: 16%;
+    input{
+      height: 2%;
     }
   }
 
@@ -57,17 +61,43 @@
     border: none;
   }
 
-  .chart-person {
-    width: 60%;
-    height: 14%;
+  .charts-container{
+    justify-content: space-between;
+    padding-top: 4%;
+  }
+  
+
+  .bar-chart {
+    width: 70rem;
+    height: 20rem;
 
   }
 
-  .torta-person {
+  .pie-chart {
+    position: relative;
+    right: 0;
     width: 20%;
-    height: 14%;
+    height: 20rem;
   }
 
   #logo-aida{
     width: 8%;
+    padding-top: 4%;
+  }
+
+  .arrow-box{
+    justify-content: flex-start !important;
+    img{
+      width: 2%;
+    }
+  }
+
+  .interval-time-flexbox{
+    border:1px solid orange;
+    width: 10%;
+  }
+
+  .item{
+    padding: 4%;
+    border: 1px solid red;
   }
