@@ -11,13 +11,12 @@
   }
 
   .interval-flexbox {
-    border:1px solid black;
     justify-content: flex-start !important;
     align-items: flex-start !important;
     flex-flow: row wrap;
     width: 100%;
     max-height:max-content;
-    gap: 6%;
+    gap: 4%;
 
     div {
       display: flex;
@@ -30,9 +29,10 @@
   }
 
   .interval-preset {
-    border:1px solid red;
     width: 40%;
     max-height: 40px;
+    min-width: 540px;
+    height: 2rem;
     p {
       font-size: 1rem;
       white-space: nowrap;
@@ -46,11 +46,15 @@
   }
 
   .interval-date-time {
-    border:1px solid blue;
-    width: 16%;
-    input{
-      height: 2%;
-    }
+    height: 2rem;
+    width: 17.2%;
+    min-width: 240px;
+  }
+
+  .interval-time-flexbox{
+    height: 2rem;
+    min-width: 136px;
+    width: 10%;
   }
 
   button {
@@ -92,10 +96,7 @@
     }
   }
 
-  .interval-time-flexbox{
-    border:1px solid orange;
-    width: 10%;
-  }
+  
 
   .item{
     padding: 4%;
