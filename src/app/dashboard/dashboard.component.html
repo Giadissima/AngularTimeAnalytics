@@ -5,11 +5,11 @@
   <div class="row-flexbox interval-flexbox">
     <div class="row-flexbox interval-preset">
       <p>Quick preset:</p>
-      <button>Ultima ora</button>
-      <button>Oggi</button>
-      <button>Ieri</button>
-      <button>Ultima settimana</button>
-      <button>Ultimo mese</button>
+      <button class="preset-buttons" #button1 (click)="onButtonClick(button1)">Ultima ora</button>
+      <button class="preset-buttons" #button2 (click)="onButtonClick(button2)">Oggi</button>
+      <button class="preset-buttons" #button3 (click)="onButtonClick(button3)">Ieri</button>
+      <button class="preset-buttons" #button4 (click)="onButtonClick(button4)">Ultima settimana</button>
+      <button class="preset-buttons" #button5 (click)="onButtonClick(button5)">Ultimo mese</button>
     </div>
     <div class="row-flexbox interval-date-time">
       <!-- TODO guardare come mettere l'icona -->

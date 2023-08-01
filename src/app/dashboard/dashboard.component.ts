@@ -42,4 +42,18 @@ export class DashboardComponent {
     '5 ore',
     '6 ore',
   ]
+
+  onButtonClick(button: HTMLButtonElement) {
+    // Prima di tutto, ripristina il colore di tutti i pulsanti
+    const buttons = document.querySelectorAll('.preset-buttons');
+    const buttonArray = Array.from(buttons) as HTMLButtonElement[]; // Converti la NodeList in un array di HTMLButtonElement
+    buttonArray.forEach(btn => {
+      btn.style.backgroundColor = 'white';
+      button.style.color = 'black';
+    });
+
+    // Imposta il colore del pulsante selezionato
+    button.style.backgroundColor = '#44b182';
+    // button.style.color = 'white';
+  }
 }
