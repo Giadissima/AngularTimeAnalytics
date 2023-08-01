@@ -16,7 +16,7 @@
     flex-flow: row wrap;
     width: 100%;
     max-height:max-content;
-    gap: 4%;
+    gap: 3%;
 
     div {
       display: flex;
@@ -72,15 +72,15 @@
   
 
   .bar-chart {
-    width: 65rem;
+    width: 55rem;
     height: 20rem;
-
   }
 
   .pie-chart {
     position: relative;
     right: 0;
-    width: 30%;
+    width: 20rem;
+    min-width: 330px;
     height: 20rem;
   }
 
