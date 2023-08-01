@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+$font: 'Roboto', sans-serif;
+
 body{
   margin-top: 3.5rem;
   padding: 2%;
+  font-family: 'Roboto', sans-serif;
 }
 
-// TODO roboto
-$font: 'Inter var', sans-serif;
 .row-flexbox {
   display: flex;
   flex-direction: row;

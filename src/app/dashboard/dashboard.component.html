@@ -15,34 +15,19 @@
       <!-- TODO guardare come mettere l'icona -->
       <input type="text" placeholder="Intervallo temporale - Fine">
       <select name="" id="">
-        <!-- TODO fare un ngfor con Angular -->
-        <option>22:00</option>
-        <option>13:00</option>
-        <option>11:00</option>
-        <option>8:00</option>
-        <option>6:00</option>
+        <option value="" *ngFor="let time of time_interval;">{{time}}</option>
       </select>
     </div> 
     <div class="row-flexbox interval-date-time">
       <input type="text" placeholder="Intervallo temporale - Fine">
       <select name="" id="">
-        <!-- TODO fare un ngfor con Angular -->
-        <option>22:00</option>
-        <option>13:00</option>
-        <option>11:00</option>
-        <option>8:00</option>
-        <option>6:00</option>
+        <option value="" *ngFor="let time of time_interval;">{{time}}</option>
       </select>
     </div>
     <div class="row-flexbox interval-time-flexbox">
       <p>Intervallo:</p>
       <select name="" id="">
-        <!-- TODO fare un ngfor con Angular -->
-        <option>1 ora</option>
-        <option>2 ore</option>
-        <option>3 ore</option>
-        <option>4 ore</option>
-        <option>5 ore</option>
+        <option value="" *ngFor="let time of amount_time_interval;">{{time}}</option>
       </select>
     </div>
   </div>
@@ -55,106 +40,4 @@
     <img class="pie-chart" src="assets/torta-allarmi.png" alt="">
   </div>
   <img id="logo-aida" src="assets/logo-aida.png" alt="">
-</div>
-
-
-<div class="row-flexbox interval-flexbox">
-  <div class="row-flexbox interval-preset">
-    <p>Quick preset:</p>
-    <button>Ultima ora</button>
-    <button>Oggi</button>
-    <button>Ieri</button>
-    <button>Ultima settimana</button>
-    <button>Ultimo mese</button>
-  </div>
-  <div class="row-flexbox interval-preset">
-    <p>Quick preset:</p>
-    <button>Ultima ora</button>
-    <button>Oggi</button>
-    <button>Ieri</button>
-    <button>Ultima settimana</button>
-    <button>Ultimo mese</button>
-  </div>
-  <div class="row-flexbox interval-preset">
-    <p>Quick preset:</p>
-    <button>Ultima ora</button>
-    <button>Oggi</button>
-    <button>Ieri</button>
-    <button>Ultima settimana</button>
-    <button>Ultimo mese</button>
-  </div>
-  <div class="row-flexbox interval-preset">
-    <p>Quick preset:</p>
-    <button>Ultima ora</button>
-    <button>Oggi</button>
-    <button>Ieri</button>
-    <button>Ultima settimana</button>
-    <button>Ultimo mese</button>
-  </div>
-  <div class="row-flexbox interval-date-time">
-    <!-- TODO guardare come mettere l'icona -->
-    <input type="text" placeholder="Intervallo temporale - Fine">
-    <select name="" id="">
-      <!-- TODO fare un ngfor con Angular -->
-      <option>22:00</option>
-      <option>13:00</option>
-      <option>11:00</option>
-      <option>8:00</option>
-      <option>6:00</option>
-    </select>
-  </div> 
-  <div class="row-flexbox interval-date-time">
-    <!-- TODO guardare come mettere l'icona -->
-    <input type="text" placeholder="Intervallo temporale - Fine">
-    <select name="" id="">
-      <!-- TODO fare un ngfor con Angular -->
-      <option>22:00</option>
-      <option>13:00</option>
-      <option>11:00</option>
-      <option>8:00</option>
-      <option>6:00</option>
-    </select>
-  </div> 
-  <div class="row-flexbox interval-date-time">
-    <!-- TODO guardare come mettere l'icona -->
-    <input type="text" placeholder="Intervallo temporale - Fine">
-    <select name="" id="">
-      <!-- TODO fare un ngfor con Angular -->
-      <option>22:00</option>
-      <option>13:00</option>
-      <option>11:00</option>
-      <option>8:00</option>
-      <option>6:00</option>
-    </select>
-  </div> 
-  <div class="row-flexbox interval-date-time">
-    <!-- TODO guardare come mettere l'icona -->
-    <input type="text" placeholder="Intervallo temporale - Fine">
-    <select name="" id="">
-      <!-- TODO fare un ngfor con Angular -->
-      <option>22:00</option>
-      <option>13:00</option>
-      <option>11:00</option>
-      <option>8:00</option>
-      <option>6:00</option>
-    </select>
-  </div> 
-  <div class="row-flexbox interval-date-time">
-    <!-- TODO guardare come mettere l'icona -->
-    <input type="text" placeholder="Intervallo temporale - Fine">
-    <select name="" id="">
-      <!-- TODO fare un ngfor con Angular -->
-      <option>22:00</option>
-      <option>13:00</option>
-      <option>11:00</option>
-      <option>8:00</option>
-      <option>6:00</option>
-    </select>
-  </div> 
-  <div class="item"><p>Item 1</p></div>
-  <div class="item"><p>Item 2</p></div>
-  <div class="item"><p>Item 3</p></div>
-  <div class="item"><p>Item 4</p></div>
-  <div class="item"><p>Item 5</p></div>
-  <div class="item"><p>Item 6</p></div>
 </div>
