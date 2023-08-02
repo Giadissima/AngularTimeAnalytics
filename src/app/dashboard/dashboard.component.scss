@@ -98,18 +98,24 @@
     }
   }
   
-  .input-icon {
+  .icon-inside-input{
     position: absolute;
-    top: 50%;
-    right: 0; // Posiziona l'icona all'estremità destra
-    transform: translateY(-50%);
-    color: #aaa;
-    pointer-events: none;
-}
+    right: 0;
+  }
 
-.input-container {
+  //TODO when focused a strange border appears
+.input-with-icon-container {
+  border: 1px solid black;
   position: relative;
   display: inline-block;
-  height: 100%;
+  height: 2rem;
   width: 100%;
+  input{
+    width: 100%;
+    // TODO la height qua non funziona ma non solo: la div è più alta rispetto al normale e l'input sta in alto
+    height: 100%;
+  }
 }
+
+      // TODO cambiare l'iconcina alla select
+

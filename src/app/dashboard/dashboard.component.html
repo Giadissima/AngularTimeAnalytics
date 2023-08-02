@@ -13,9 +13,9 @@
     </div>
     <div class="row-flexbox interval-date-time">
       <!-- TODO guardare come mettere l'icona -->
-      <div class="input-container">
-        <input type="text" placeholder="Intervallo temporale - Fine">
-        <img src="assets/calendario.png" alt="" class="span-icon">
+      <div class="input-with-icon-container">
+        <input type="text" placeholder="Intervallo temporale - Inizio">
+        <img src="assets/calendario.png" alt="" class="icon-inside-input">
       </div>
       <select name="" id="">
         <option value="" disabled selected hidden>Ora: </option>
@@ -23,7 +23,10 @@
       </select>
     </div>
     <div class="row-flexbox interval-date-time">
-      <input type="text" placeholder="Intervallo temporale - Fine">
+      <div class="input-with-icon-container">
+        <input type="text" placeholder="Intervallo temporale - Fine">
+        <img src="assets/calendario.png" alt="" class="icon-inside-input">
+      </div>
       <select name="" id="">
         <option value="" disabled selected hidden>Ora: </option>
         <option value="" *ngFor="let time of time_interval;">{{time}}</option>
