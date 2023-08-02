@@ -49,11 +49,11 @@ export class DashboardComponent {
     const buttonArray = Array.from(buttons) as HTMLButtonElement[]; // Converti la NodeList in un array di HTMLButtonElement
     buttonArray.forEach(btn => {
       btn.style.backgroundColor = 'white';
-      button.style.color = 'black';
+      btn.style.color = 'black';
     });
 
     // Imposta il colore del pulsante selezionato
     button.style.backgroundColor = '#44b182';
-    // button.style.color = 'white';
+    button.style.color = 'white';
   }
 }
