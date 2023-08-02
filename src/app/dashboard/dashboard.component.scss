@@ -1,12 +1,15 @@
+  @import "../../styles.scss";
+
   .main-container {
     align-items: flex-start !important;
     justify-content: flex-start;
   }
 
   // ? ---- Back button -------------------------------------
-  .arrow-box{
+  .arrow-box {
     justify-content: flex-start !important;
-    img{
+
+    img {
       width: 2%;
     }
   }
@@ -24,7 +27,7 @@
     align-items: flex-start !important;
     flex-flow: row wrap;
     width: 100%;
-    max-height:max-content;
+    max-height: max-content;
     gap: 1%;
 
     div {
@@ -44,6 +47,7 @@
     justify-content: space-around;
     height: 2rem;
     font-size: small;
+
     // TODO non va il font-family
     p {
       white-space: nowrap;
@@ -63,7 +67,7 @@
     min-width: 260px;
   }
 
-  .interval-time-flexbox{
+  .interval-time-flexbox {
     height: 2rem;
     min-width: 136px;
     width: 10%;
@@ -71,11 +75,9 @@
 
   // ? ---- Charts view -------------------------------
 
-  .charts-container{
+  .charts-container {
     justify-content: space-between;
-    padding-top: 4%;
   }
-  
 
   .bar-chart {
     width: 55rem;
@@ -90,33 +92,48 @@
     height: 20rem;
   }
 
+  #person-charts {
+    padding-bottom: 4%;
+  }
+
+  .label-on-chart {
+    position: relative;
+
+    p {
+      position: absolute;
+      top: 4%;
+      left: 4%;
+      color: $dark-gray;
+    }
+  }
+
   // ? ---- Logo --------------------------------------------
 
-  #logo-aida{
+  #logo-aida {
     width: 8%;
     padding-top: 4%;
   }
-  
+
   // ? ---- Icons inside inputs ---------------------------------
 
-  .icon-inside-input{
+  .icon-inside-input {
     position: absolute;
     right: 0;
   }
 
   //TODO when focused a strange border appears
-.input-with-icon-container {
-  border: 1px solid black;
-  position: relative;
-  display: inline-block;
-  height: 2rem;
-  width: 100%;
-  input{
+  .input-with-icon-container {
+    border: 1px solid black;
+    position: relative;
+    display: inline-block;
+    height: 2rem;
     width: 100%;
-    // TODO la height qua non funziona ma non solo: la div è più alta rispetto al normale e l'input sta in alto
-    height: 100%;
+
+    input {
+      width: 100%;
+      // TODO la height qua non funziona ma non solo: la div è più alta rispetto al normale e l'input sta in alto
+      height: 100%;
+    }
   }
-}
 
-      // TODO cambiare l'iconcina alla select
-
+  // TODO cambiare l'iconcina alla select
