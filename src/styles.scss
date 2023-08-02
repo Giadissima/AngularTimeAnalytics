@@ -1,14 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+//* General styles file */
+
+// ? ---- variables declarations -----------------------------------
 $font: 'Roboto', sans-serif;
 $gray: #f8f8f8;
 $dark-gray: #969696;
 
+// ? ---- body settings --------------------------------------------
 body{
   margin-top: 3.5rem;
   padding: 2%;
   font-family: 'Roboto', sans-serif;
   font-size: small;
 }
+
+// ? ---- general classes declarations ------------------------------
 
 .row-flexbox {
   display: flex;
@@ -27,9 +32,13 @@ body{
   height: 100%;
 }
 
+
+// ? ---- general styles applied on entire typologies of element ----
+
 p{
   font-family: $font;
 }
+
 button{
   font-size: small;
 }
@@ -51,4 +60,12 @@ input{
   border: none;
   border-bottom: 1px solid $dark-gray;
   background-color: $gray;
+}
+
+button {
+  background-color: white;
+  padding: 1%;
+  border-radius: 0.3rem;
+  box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.3);
+  border: none;
 }
