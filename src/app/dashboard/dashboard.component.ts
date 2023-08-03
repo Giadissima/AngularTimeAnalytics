@@ -43,9 +43,24 @@ export class DashboardComponent {
     '6 ore',
   ]
 
-  onButtonClick(button: HTMLButtonElement) {
+  onButtonClick(button: HTMLButtonElement, buttonsGroup: string) {
     // Prima di tutto, ripristina il colore di tutti i pulsanti
-    const buttons = document.querySelectorAll('.preset-buttons');
+    let buttons: NodeListOf<Element>;
+    switch(buttonsGroup){
+      case "preset":
+        buttons = document.querySelectorAll('.preset-buttons');
+        break;
+      case "people-chart":
+        buttons = document.querySelectorAll('.people-chart');
+        break;
+      case "alarms-chart":
+        buttons = document.querySelectorAll('.alarms-chart');
+        break;
+      default:
+        console.log("error getting buttonsGroup as parameter");
+        return;
+    } 
+    
     const buttonArray = Array.from(buttons) as HTMLButtonElement[]; // Converti la NodeList in un array di HTMLButtonElement
     buttonArray.forEach(btn => {
       btn.style.backgroundColor = 'white';

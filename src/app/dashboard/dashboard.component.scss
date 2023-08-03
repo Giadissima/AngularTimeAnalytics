@@ -52,12 +52,6 @@
     p {
       white-space: nowrap;
     }
-
-    button {
-      width: 9rem;
-      height: 2rem;
-      white-space: nowrap;
-    }
   }
 
   // TODO ci sono degli spazi strani
@@ -106,6 +100,18 @@
       color: $dark-gray;
     }
   }
+  
+  .buttons-on-chart {
+    position: absolute;
+    right: 4%;
+    justify-content: space-between !important;
+    width: 40% !important;
+    top: 4%;
+    height: 10% !important;
+    button{
+      width: 23%;
+    }
+  }
 
   .counter-on-pie-chart {
     position: relative;
@@ -143,11 +149,9 @@
 
   //TODO when focused a strange border appears
   .input-with-icon-container {
-    border: 1px solid black;
     position: relative;
     display: inline-block;
-  
-    height: 2rem;
+    height: 100%;
     width: 100%;
 
     input {
