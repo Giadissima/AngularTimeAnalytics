@@ -1,4 +1,23 @@
-<div id="container">
-  <div id="div1"><p>Item 1</p></div>
-  <div id="div2"><p>Item 2</p></div>
+<div>
+  <button  (click)="enableDisableRule(0, 'first')" [ngClass]="{'white-button' : toggleFirstGroup[0], 'green-button': !toggleFirstGroup[0]}">Default</button>
+  <button  (click)="enableDisableRule(1, 'first')" [ngClass]="{'white-button' : toggleFirstGroup[1], 'green-button': !toggleFirstGroup[1]}">Item 1</button>
+  <button  (click)="enableDisableRule(2, 'first')" [ngClass]="{'white-button' : toggleFirstGroup[2], 'green-button': !toggleFirstGroup[2]}">Item 2</button>
+  <button  (click)="enableDisableRule(3, 'first')" [ngClass]="{'white-button' : toggleFirstGroup[3], 'green-button': !toggleFirstGroup[3]}">Item 3</button>
 </div>
+<br>
+
+<div>
+  <button  (click)="enableDisableRule(0, 'second')" [ngClass]="{'white-button' : toggleSecondGroup[0], 'green-button': !toggleSecondGroup[0]}">Default</button>
+  <button  (click)="enableDisableRule(1, 'second')" [ngClass]="{'white-button' : toggleSecondGroup[1], 'green-button': !toggleSecondGroup[1]}">Item 1</button>
+  <button  (click)="enableDisableRule(2, 'second')" [ngClass]="{'white-button' : toggleSecondGroup[2], 'green-button': !toggleSecondGroup[2]}">Item 2</button>
+  <button  (click)="enableDisableRule(3, 'second')" [ngClass]="{'white-button' : toggleSecondGroup[3], 'green-button': !toggleSecondGroup[3]}">Item 3</button>
+</div>
+<br>
+
+<div>
+  <button  (click)="enableDisableRule(0, 'third')" [ngClass]="{'white-button' : toggleThirdGroup[0], 'green-button': !toggleThirdGroup[0]}">Default</button>
+  <button  (click)="enableDisableRule(1, 'third')" [ngClass]="{'white-button' : toggleThirdGroup[1], 'green-button': !toggleThirdGroup[1]}">Item 1</button>
+  <button  (click)="enableDisableRule(2, 'third')" [ngClass]="{'white-button' : toggleThirdGroup[2], 'green-button': !toggleThirdGroup[2]}">Item 2</button>
+  <button  (click)="enableDisableRule(3, 'third')" [ngClass]="{'white-button' : toggleThirdGroup[3], 'green-button': !toggleThirdGroup[3]}">Item 3</button>
+</div>
+<br>

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
   time_interval = [
@@ -34,41 +34,27 @@ export class DashboardComponent {
     '23:00',
   ];
 
-  amount_time_interval = [
-    '1 ora',
-    '2 ore',
-    '3 ore',
-    '4 ore',
-    '5 ore',
-    '6 ore',
-  ]
+  amount_time_interval = ['1 ora', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
+  togglePresetGroup: boolean[] = [false, false, true, false, false];
+  togglePeopleChartGroup: boolean[] = [true, false, false, false];
+  toggleAlarmsChartGroup: boolean[] = [true, false, false, false];
 
-  onButtonClick(button: HTMLButtonElement, buttonsGroup: string) {
-    // Prima di tutto, ripristina il colore di tutti i pulsanti
-    let buttons: NodeListOf<Element>;
+  buttonsChangeColorOnClick(i:number, buttonsGroup:string) {
     switch(buttonsGroup){
       case "preset":
-        buttons = document.querySelectorAll('.preset-buttons');
+        this.togglePresetGroup.fill(false);
+        this.togglePresetGroup[i] = true;
         break;
       case "people-chart":
-        buttons = document.querySelectorAll('.people-chart');
+        this.togglePeopleChartGroup.fill(false);
+        this.togglePeopleChartGroup[i] = true;
         break;
       case "alarms-chart":
-        buttons = document.querySelectorAll('.alarms-chart');
+        this.toggleAlarmsChartGroup.fill(false);
+        this.toggleAlarmsChartGroup[i] = true;
         break;
       default:
-        console.log("error getting buttonsGroup as parameter");
         return;
     } 
-    
-    const buttonArray = Array.from(buttons) as HTMLButtonElement[]; // Converti la NodeList in un array di HTMLButtonElement
-    buttonArray.forEach(btn => {
-      btn.style.backgroundColor = 'white';
-      btn.style.color = 'black';
-    });
-
-    // Imposta il colore del pulsante selezionato
-    button.style.backgroundColor = '#44b182';
-    button.style.color = 'white';
   }
 }
