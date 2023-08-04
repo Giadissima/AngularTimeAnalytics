@@ -45,26 +45,28 @@ p {
   font-family: $font;
 }
 
+.img-to-space{
+  margin-right: 4%;
+}
+
+// TODO anche i bottoni devono stringersi mano a mano
 .img-container {
-  display: grid;
-  place-items: center;
+  border-radius: 6%;
+  height: 45px;
+  width: 45px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
-    width: 45px;
-    height: 45px;
+    width: 53px;
+    height: 54px;
+    border-radius: 6%;
+    margin: -5px;
   }
 }
 
-.test {
-    border-radius: 50%;
-    text-align: center;
-    overflow: hidden;
-    height: 50px;
-    width: 50px;
-    // border: 1px solid red;
-  img {
-    border-radius: 50%;
-
-    // vertical-align: middle;
-  }
+#zoom{
+  border-right: 0.1px solid rgba(255, 255, 255, 0.4);
 }
