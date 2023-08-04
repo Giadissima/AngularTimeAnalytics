@@ -1,23 +1,21 @@
 @import '../styles.scss';
 
-// TODO vedere perché non cambia il font
-$font: 'Inter var', sans-serif;
-
+$border-radius: 6%;
 .nav {
   position: fixed;
   z-index: 9999;
   background-color: $green;
   top: 0;
   left: 0;
-  height: 64px !important;
+  height: 80px !important;
   padding-left: 1%;
   flex-wrap: nowrap;
   justify-content: flex-start !important;
 }
 
 #logo {
-  width: 8rem;
-  height: 65%;
+  width: 10rem;
+  height: 60%;
 
   img {
     height: 100%;
@@ -36,9 +34,6 @@ $font: 'Inter var', sans-serif;
   width: 30%;
   height: 100%;
 
-  img {
-    border-radius: 50%;
-  }
 }
 
 p {
@@ -51,22 +46,31 @@ p {
 
 // TODO anche i bottoni devono stringersi mano a mano
 .img-container {
-  border-radius: 6%;
-  height: 45px;
-  width: 45px;
+  border-radius: $border-radius;
+  height: 5%;
+  width: 25%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
-    width: 53px;
-    height: 54px;
-    border-radius: 6%;
+    width: 120%;
+    height: 120%;
+    border-radius: $border-radius;
     margin: -5px;
   }
 }
 
-#zoom{
+#zoom-in{
   border-right: 0.1px solid rgba(255, 255, 255, 0.4);
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: $border-radius 0 0 $border-radius;
+}
+
+
+#zoom-out{
+  border-right: 0.1px solid rgba(255, 255, 255, 0.4);
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 0 $border-radius $border-radius 0;
 }
