@@ -5,10 +5,15 @@
     justify-content: flex-start;
   }
 
+  $select-container-width: 280px;
+  $toolbar-height: 1.8rem;
+
   // ? ---- Back button -------------------------------------
   .arrow-box {
     justify-content: flex-start !important;
     font-size: medium;
+    gap: 1%;
+    margin: 1% 0 2% 0; /* top | right | bottom | left */
     img {
       width: 2%;
     }
@@ -36,18 +41,16 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
       gap: 2%;
     }
   }
 
   .interval-preset {
-    width: 40%;
+    width: 30%;
     max-height: 40px;
     min-width: 540px;
-    justify-content: space-around;
-    height: 2rem;
-    font-size: small;
+    height: $toolbar-height;
 
     // TODO non va il font-family
     p {
@@ -55,17 +58,26 @@
     }
   }
 
-  // TODO ci sono degli spazi strani
   .interval-date-time {
-    height: 2rem;
-    width: 260px;
-    min-width: 260px;
+    width: $select-container-width;
+    height: $toolbar-height;
+    width: 290px;
+    min-width: 290px;
   }
 
   .interval-time-flexbox {
-    height: 2rem;
+    height: $toolbar-height;
     min-width: 136px;
     width: 10%;
+  }
+
+  #time-interval{
+    height: $toolbar-height;
+    min-width: 136px;
+    width: 6%;
+    select{
+      width: 55%;
+    }
   }
 
   // ? ---- Charts view ------------------------------------------
@@ -106,12 +118,9 @@
     position: absolute;
     right: 4%;
     justify-content: space-between !important;
-    width: 40% !important;
+    width: 30% !important;
     top: 4%;
     height: 10% !important;
-    button{
-      width: 23%;
-    }
   }
 
   .counter-on-pie-chart {
@@ -145,19 +154,21 @@
 
   .icon-inside-input {
     position: absolute;
-    right: 0;
+    right: 2%;
+    height: 53%;
+    width: 7%;
   }
 
   //TODO when focused a strange border appears
   .input-with-icon-container {
     position: relative;
     display: inline-block;
+    padding-left: 2%;
     height: 100%;
     width: 100%;
 
     input {
       width: 100%;
-      // TODO la height qua non funziona ma non solo: la div è più alta rispetto al normale e l'input sta in alto
       height: 100%;
     }
   }
@@ -173,5 +184,10 @@
   
   .white-button{
     background-color: white;
-    color: black;
+    color: $dark-gray;
+  }
+
+  #interval{
+    width: 40%;
+    height: $toolbar-height;
   }

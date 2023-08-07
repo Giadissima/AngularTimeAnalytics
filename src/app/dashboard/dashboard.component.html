@@ -1,6 +1,6 @@
 <div class="column-flexbox main-container">
   <div class="row-flexbox arrow-box">
-    <img src="assets/arrow_back.png" alt=""><a href="" class="back-button"> Indietro</a>
+    <img src="assets/arrow_back.png" alt=""><a href="" class="back-button">Indietro</a>
   </div>
   <div class="row-flexbox interval-flexbox">
     <div class="row-flexbox interval-preset">
@@ -17,27 +17,30 @@
       <button (click)="buttonsChangeColorOnClick(4, 'preset')"
         [ngClass]="{'green-button' : togglePresetGroup[4], 'white-button': !togglePresetGroup[4]}">Ultimo mese</button>
     </div>
-    <div class="row-flexbox interval-date-time">
-      <div class="input-with-icon-container">
-        <input type="text" placeholder="Intervallo temporale - Inizio">
-        <img src="assets/calendario.png" alt="" class="icon-inside-input">
+    <div class="row-flexbox" id="interval">
+      <div class="row-flexbox interval-date-time">
+        <div class="input-with-icon-container">
+          <input type="text" placeholder="Intervallo temporale - Inizio">
+          <img src="assets/calendario.png" alt="" class="icon-inside-input">
+        </div>
+        <select name="" id="">
+          <option value="" disabled selected hidden>Ora: </option>
+          <option value="" *ngFor="let time of time_interval;">{{time}}</option>
+        </select>
       </div>
-      <select name="" id="">
-        <option value="" disabled selected hidden>Ora: </option>
-        <option value="" *ngFor="let time of time_interval;">{{time}}</option>
-      </select>
-    </div>
-    <div class="row-flexbox interval-date-time">
-      <div class="input-with-icon-container">
-        <input type="text" placeholder="Intervallo temporale - Fine">
-        <img src="assets/calendario.png" alt="" class="icon-inside-input">
+      <p> - </p>
+      <div class="row-flexbox interval-date-time">
+        <div class="input-with-icon-container">
+          <input type="text" placeholder="Intervallo temporale - Fine">
+          <img src="assets/calendario.png" alt="" class="icon-inside-input">
+        </div>
+        <select name="" id="">
+          <option value="" disabled selected hidden>Ora: </option>
+          <option value="" *ngFor="let time of time_interval;">{{time}}</option>
+        </select>
       </div>
-      <select name="" id="">
-        <option value="" disabled selected hidden>Ora: </option>
-        <option value="" *ngFor="let time of time_interval;">{{time}}</option>
-      </select>
     </div>
-    <div class="row-flexbox interval-time-flexbox">
+    <div class="row-flexbox" id="time-interval">
       <p>Intervallo:</p>
       <select name="" id="">
         <option value="" *ngFor="let time of amount_time_interval;">{{time}}</option>

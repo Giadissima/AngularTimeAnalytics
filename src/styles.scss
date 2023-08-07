@@ -1,6 +1,7 @@
 //* General styles file */
 
 // ? ---- variables declarations -----------------------------------
+$font-size: 0.7rem; 
 $font: 'Roboto', sans-serif;
 $gray: #f8f8f8;
 $dark-gray: #7b7b7b;
@@ -38,38 +39,41 @@ body{
 
 p{
   font-family: $font;
+  font-size: $font-size;
+  color: $dark-gray;
 }
 
 button{
-  font-size: small;
-  width: 9rem;
-  height: 2rem;
+  font-size: $font-size;
+  padding-left: 2%;
+  padding: 0 3%  0 3%; //top right bottom left
+  height: 100%;
+  // TODO color on typescript - dark gray
   white-space: nowrap;
+  background-color: white;
+  border-radius: 0.2rem;
+  box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.3);
+  border: none;
 }
 
 select{
   height: 100%;
   width: 40%;
-  font-size: small;
+  text-align: center;
+  font-size: $font-size;
   border: none;
   border-bottom: 1px solid $dark-gray;
   background-color: $gray;
+  color: $dark-gray;
+
 }
 
 input{
-  font-size: small;
+  font-size: $font-size;
   color: $dark-gray;
   height: 100%;
   border: none;
-  padding: 0;
+  padding: 0 0 0 6%; //top right bottom left
   border-bottom: 1px solid $dark-gray;
   background-color: $gray;
-}
-
-button {
-  background-color: white;
-  padding: 1%;
-  border-radius: 0.3rem;
-  box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.3);
-  border: none;
 }
