@@ -28,7 +28,9 @@
     flex-flow: row wrap;
     width: 100%;
     max-height: max-content;
-    gap: 1%;
+    gap: 5%;
+    margin-bottom: 2%;
+    margin-top: 1%;
 
     div {
       display: flex;
@@ -36,7 +38,6 @@
       align-items: center;
       justify-content: flex-start;
       gap: 2%;
-      padding-bottom: 2%;
     }
   }
 
@@ -74,7 +75,7 @@
   }
 
   .bar-chart {
-    width: 59rem;
+    width: 70rem;
     height: 20rem;
   }
 

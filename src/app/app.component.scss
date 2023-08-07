@@ -1,13 +1,16 @@
 @import '../styles.scss';
 
-$border-radius: 6%;
+$buttons-border-radius: 6%;
+$nav-height: 80px !important;
+$buttons-height: 40px;
+$buttons-min-width: 40px;
 .nav {
   position: fixed;
   z-index: 9999;
   background-color: $green;
   top: 0;
   left: 0;
-  height: 80px !important;
+  height: $nav-height;
   padding-left: 1%;
   flex-wrap: nowrap;
   justify-content: flex-start !important;
@@ -23,17 +26,18 @@ $border-radius: 6%;
   }
 }
 
-//TODO i bottoni devono andare a sinistra
+// TODO allineare le icone
 
 .buttons {
   justify-content: space-between !important;
   flex-wrap: nowrap;
-  position: fixed;
-  right: 0;
+  position: relative;
+  // TODO perché?
+  right: -69%;
+  top: 40%;
   margin-right: 2%;
   width: 30%;
-  height: 100%;
-
+  height: 20%;
 }
 
 p {
@@ -44,20 +48,21 @@ p {
   margin-right: 4%;
 }
 
-// TODO anche i bottoni devono stringersi mano a mano
 .img-container {
-  border-radius: $border-radius;
-  height: 5%;
+  border-radius: $buttons-border-radius;
+  height: $buttons-height;
   width: 25%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: $buttons-min-width;
 
   img {
     width: 120%;
     height: 120%;
-    border-radius: $border-radius;
+    min-width: $buttons-min-width;
+    border-radius: $buttons-border-radius;
     margin: -5px;
   }
 }
@@ -65,12 +70,18 @@ p {
 #zoom-in{
   border-right: 0.1px solid rgba(255, 255, 255, 0.4);
   /* top-left | top-right | bottom-right | bottom-left */
-  border-radius: $border-radius 0 0 $border-radius;
+  border-radius: $buttons-border-radius 0 0 $buttons-border-radius;
 }
 
 
 #zoom-out{
   border-right: 0.1px solid rgba(255, 255, 255, 0.4);
   /* top-left | top-right | bottom-right | bottom-left */
-  border-radius: 0 $border-radius $border-radius 0;
+  border-radius: 0 $buttons-border-radius $buttons-border-radius 0;
+}
+
+.absolute-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
