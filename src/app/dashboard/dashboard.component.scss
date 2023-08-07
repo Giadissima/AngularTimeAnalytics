@@ -5,9 +5,6 @@
     justify-content: flex-start;
   }
 
-  $select-container-width: 280px;
-  $toolbar-height: 1.8rem;
-
   // ? ---- Back button -------------------------------------
   .arrow-box {
     justify-content: flex-start !important;
@@ -27,98 +24,9 @@
     color: black;
   }
 
-  // ? ---- Interval selector -------------------------------
-
-  .interval-flexbox {
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    flex-flow: row wrap;
-    width: 100%;
-    max-height: max-content;
-    gap: 5%;
-    margin-bottom: 2%;
-    margin-top: 1%;
-
-    div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2%;
-    }
-  }
-
-  .interval-preset {
-    width: 30%;
-    max-height: 40px;
-    min-width: 540px;
-    height: $toolbar-height;
-
-    p {
-      white-space: nowrap;
-    }
-
-    button {
-      padding: 0 3% 0 3%; //top right bottom left
-    }
-  }
-
-  .interval-date-time {
-    width: $select-container-width;
-    height: $toolbar-height;
-    width: 290px;
-    min-width: 290px;
-  }
-
-  .interval-time-flexbox {
-    height: $toolbar-height;
-    min-width: 136px;
-    width: 10%;
-  }
-
-  #time-interval {
-    height: $toolbar-height;
-    min-width: 136px;
-    width: 6%;
-
-    select {
-      width: 55%;
-    }
-  }
-
   // ? ---- Logo ------------------------------------------------
 
   #logo-aida {
     width: 8%;
     padding-top: 4%;
-  }
-
-  // ? ---- Icons inside inputs ---------------------------------
-
-  .icon-inside-input {
-    position: absolute;
-    right: 2%;
-    height: 53%;
-    width: 7%;
-  }
-
-  //TODO when focused a strange border appears
-  .input-with-icon-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 2%;
-    height: 100%;
-    width: 100%;
-
-    input {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  // TODO cambiare la freccina alla select
-
-  #interval {
-    width: 40%;
-    height: $toolbar-height;
   }
