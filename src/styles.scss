@@ -46,7 +46,6 @@ p{
 button{
   font-size: $font-size;
   padding-left: 2%;
-  padding: 0 3%  0 3%; //top right bottom left
   height: 100%;
   // TODO color on typescript - dark gray
   white-space: nowrap;
@@ -76,4 +75,16 @@ input{
   padding: 0 0 0 6%; //top right bottom left
   border-bottom: 1px solid $dark-gray;
   background-color: $gray;
+}
+
+// ? ---- Buttons styles ---------------------------------
+
+.green-button {
+  background-color: $green;
+  color: white;
+}
+
+.white-button {
+  background-color: white;
+  color: $dark-gray;
 }

@@ -1,0 +1,74 @@
+@import "../../../styles.scss"; // temp
+// ? ---- Charts view ------------------------------------------
+$charts-height: 18rem;
+
+.charts-container {
+  justify-content: space-between;
+  width: 104%;
+}
+
+.bar-chart {
+  width: 70rem;
+  height: $charts-height;
+}
+
+.pie-chart {
+  height: $charts-height;
+  width: $charts-height;
+}
+
+#person-charts {
+  padding-bottom: 4%;
+}
+
+.label-on-chart {
+  position: relative;
+
+  p {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    color: $dark-gray;
+  }
+}
+
+.buttons-on-chart {
+  position: absolute;
+  right: 4%;
+  justify-content: space-between !important;
+  width: 30% !important;
+  top: 4%;
+  height: 10% !important;
+
+  button {
+    padding: 0 4% 0 4%; //top right bottom left
+
+  }
+}
+
+.counter-on-pie-chart {
+  position: relative;
+  display: inline-block;
+
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $dark-gray;
+
+    p {
+      margin: 0;
+    }
+
+    .number {
+      font-size: 2rem;
+      margin-bottom: 2%;
+    }
+  }
+}
+
+.chart-label {
+  font-size: 1rem;
+}

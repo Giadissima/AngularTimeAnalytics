@@ -2,8 +2,8 @@
 
 $buttons-border-radius: 6%;
 $nav-height: 80px !important;
-$buttons-height: 40px;
-$buttons-min-width: 40px;
+$buttons-height: 38px;
+$buttons-min-width: 38px;
 .nav {
   position: fixed;
   z-index: 9999;
@@ -32,8 +32,10 @@ $buttons-min-width: 40px;
   justify-content: space-between !important;
   flex-wrap: nowrap;
   position: relative;
+
   // TODO perché?
   right: -69%;
+  
   top: 40%;
   margin-right: 2%;
   width: 30%;
@@ -75,7 +77,6 @@ p {
 
 
 #zoom-out{
-  border-right: 0.1px solid rgba(255, 255, 255, 0.4);
   /* top-left | top-right | bottom-right | bottom-left */
   border-radius: 0 $buttons-border-radius $buttons-border-radius 0;
 }

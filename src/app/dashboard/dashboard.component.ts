@@ -36,26 +36,10 @@ export class DashboardComponent {
 
   amount_time_interval = ['1 ora', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
 
-  togglePresetGroup: boolean[] = [false, false, true, false, false];
-  togglePeopleChartGroup: boolean[] = [true, false, false, false];
-  toggleAlarmsChartGroup: boolean[] = [true, false, false, false];
+  toggleGroup: boolean[] = [false, false, true, false, false];
 
-  buttonsChangeColorOnClick(i: number, buttonsGroup: string) {
-    switch (buttonsGroup) {
-      case 'preset':
-        this.togglePresetGroup.fill(false);
-        this.togglePresetGroup[i] = true;
-        break;
-      case 'people-chart':
-        this.togglePeopleChartGroup.fill(false);
-        this.togglePeopleChartGroup[i] = true;
-        break;
-      case 'alarms-chart':
-        this.toggleAlarmsChartGroup.fill(false);
-        this.toggleAlarmsChartGroup[i] = true;
-        break;
-      default:
-        return;
-    }
+  buttonsChangeColorOnClick(i: number) {
+      this.toggleGroup.fill(false);
+      this.toggleGroup[i] = true;
   }
 }

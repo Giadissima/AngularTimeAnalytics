@@ -13,7 +13,9 @@
     justify-content: flex-start !important;
     font-size: medium;
     gap: 1%;
-    margin: 1% 0 2% 0; /* top | right | bottom | left */
+    margin: 1% 0 2% 0;
+
+    /* top | right | bottom | left */
     img {
       width: 2%;
     }
@@ -52,9 +54,12 @@
     min-width: 540px;
     height: $toolbar-height;
 
-    // TODO non va il font-family
     p {
       white-space: nowrap;
+    }
+
+    button {
+      padding: 0 3% 0 3%; //top right bottom left
     }
   }
 
@@ -71,75 +76,13 @@
     width: 10%;
   }
 
-  #time-interval{
+  #time-interval {
     height: $toolbar-height;
     min-width: 136px;
     width: 6%;
-    select{
+
+    select {
       width: 55%;
-    }
-  }
-
-  // ? ---- Charts view ------------------------------------------
-
-  .charts-container {
-    justify-content: space-between;
-  }
-
-  .bar-chart {
-    width: 70rem;
-    height: 20rem;
-  }
-
-  .pie-chart {
-    position: relative;
-    right: 0;
-    width: 20rem;
-    min-width: 330px;
-    height: 20rem;
-  }
-
-  #person-charts {
-    padding-bottom: 4%;
-  }
-
-  .label-on-chart {
-    position: relative;
-
-    p {
-      position: absolute;
-      top: 4%;
-      left: 4%;
-      color: $dark-gray;
-    }
-  }
-  
-  .buttons-on-chart {
-    position: absolute;
-    right: 4%;
-    justify-content: space-between !important;
-    width: 30% !important;
-    top: 4%;
-    height: 10% !important;
-  }
-
-  .counter-on-pie-chart {
-    position: relative;
-    display: inline-block;
-    .text{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: $dark-gray;
-      p{
-        margin: 0;
-      }
-      .number{
-        font-size: 2rem;
-        margin-bottom: 2%;
-      }
     }
   }
 
@@ -163,7 +106,7 @@
   .input-with-icon-container {
     position: relative;
     display: inline-block;
-    padding-left: 2%;
+    margin-right: 2%;
     height: 100%;
     width: 100%;
 
@@ -173,21 +116,9 @@
     }
   }
 
-  // TODO cambiare l'iconcina alla select
+  // TODO cambiare la freccina alla select
 
-  // ? ---- Buttons styles ---------------------------------
- 
-  .green-button{
-    background-color: $green;
-    color: white;
-  }
-  
-  .white-button{
-    background-color: white;
-    color: $dark-gray;
-  }
-
-  #interval{
+  #interval {
     width: 40%;
     height: $toolbar-height;
   }
