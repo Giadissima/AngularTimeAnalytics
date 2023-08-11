@@ -5,10 +5,15 @@ $charts-height: 18rem;
 .charts-container {
   justify-content: space-between;
   width: 104%;
+
+  @media (max-width: $media-width) {
+    flex-direction: column !important;
+    align-items: center;
+  }
 }
 
 .bar-chart {
-  width: 70rem;
+  width: 100%;
   height: $charts-height;
 }
 
@@ -72,3 +77,5 @@ $charts-height: 18rem;
 .chart-label {
   font-size: 1rem;
 }
+
+// 1116 px

@@ -6,12 +6,15 @@ $font: 'Roboto', sans-serif;
 $gray: #f8f8f8;
 $dark-gray: #7b7b7b;
 $green: #44b182;
+$media-width: 1217px;
 
 // ? ---- body settings --------------------------------------------
 body{
-  margin-top: 3.5rem;
-  padding: 2%;
+  // TODO come posso risolvere il problema della pagina che si muove diminuendo lo spazio nello schermo?
+  margin-top: 84px;
+  margin-left: 30px;
   font-family: 'Roboto', sans-serif;
+  min-width: 960px;
   font-size: small;
 }
 

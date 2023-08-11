@@ -9,17 +9,18 @@
   .arrow-box {
     justify-content: flex-start !important;
     font-size: medium;
-    gap: 1%;
-    margin: 1% 0 2% 0;
+    min-height: 32px;
+    gap: 10px;
+    margin: 10px 0 0 0;
 
     /* top | right | bottom | left */
     img {
-      width: 2%;
+      width: 29px;
     }
   }
 
   .back-button {
-    gap: 0.8%;
+    gap: 10px;
     text-decoration: none;
     color: black;
   }
@@ -27,6 +28,8 @@
   // ? ---- Logo ------------------------------------------------
 
   #logo-aida {
-    width: 8%;
-    padding-top: 4%;
+    width: 133px;
+    object-fit: cover;
+    min-width: 100px;
+    padding-top: 40px;
   }
