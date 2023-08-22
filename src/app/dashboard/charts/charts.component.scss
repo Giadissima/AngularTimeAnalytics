@@ -1,10 +1,11 @@
 @import "../../../styles.scss"; // temp
 // ? ---- Charts view ------------------------------------------
-$charts-height: 18rem;
+$charts-height: 288px;
 
 .charts-container {
   justify-content: space-between;
   width: 100%;
+  height: $charts-height;
 
   @media (max-width: $media-width) {
     flex-direction: column !important;
@@ -79,17 +80,11 @@ $charts-height: 18rem;
 
 
 #pie-1{
-  width: 19%;
-  height: 18rem;
-  max-width: 288px;
-  min-width: 288px;
+  width: $charts-height;
+  height: $charts-height;
   margin-right: 40px;
 }
 
 #pie-2{
-  height:18rem;
-  max-height:288px;
-  min-width: 288px;
-
-  max-width: 288px;
+  height:$charts-height;
 }

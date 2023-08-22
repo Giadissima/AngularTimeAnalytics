@@ -1,5 +1,6 @@
 $select-container-width: 280px;
 $toolbar-height: 1.8rem;
+$interval-container-width: 812px;
 
 // ? ---- Interval selector -------------------------------
 
@@ -7,9 +8,9 @@ $toolbar-height: 1.8rem;
   justify-content: flex-start !important;
   align-items: flex-start !important;
   flex-flow: row wrap;
-  width: 120%;
+  width: 100%;
+  min-width: 1322px;
   max-height: max-content;
-  gap: 5%;
   margin-bottom: 20px;
   margin-top: 10px;
 
@@ -27,6 +28,7 @@ $toolbar-height: 1.8rem;
   max-height: 40px;
   min-width: 540px;
   margin-top: 20px;
+  margin-right: 40px;
   height: $toolbar-height;
 
   p {
@@ -92,9 +94,9 @@ $toolbar-height: 1.8rem;
 }
 
 .interval-container{
-  width: 51%;
+  width: 57%;
   gap:6%;
   margin-top: 20px;
-  min-width: 786px;
+  min-width: 769px;
   flex-wrap: nowrap;
 }
