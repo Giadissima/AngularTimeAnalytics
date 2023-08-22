@@ -5,7 +5,7 @@ $charts-height: 288px;
 .charts-container {
   justify-content: space-between;
   width: 100%;
-  height: $charts-height;
+  min-height: $charts-height;
 
   @media (max-width: $media-width) {
     flex-direction: column !important;
