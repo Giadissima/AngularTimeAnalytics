@@ -1,12 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TestComponent } from './test/test.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { ChartsComponent } from './dashboard/charts/charts.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {DpDatePickerModule} from 'ng2-date-picker';
+import { NgModule } from '@angular/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TestComponent } from './test/test.component';
 import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
+import { AlarmsBarChartComponent } from './dashboard/charts/alarms-bar-chart/alarms-bar-chart.component';
+import { PeopleBarChartComponent } from './dashboard/charts/people-bar-chart/people-bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +17,17 @@ import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
     DashboardComponent,
     TestComponent,
     ChartsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    AlarmsBarChartComponent,
+    PeopleBarChartComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgxChartsModule,
+    DpDatePickerModule,
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
