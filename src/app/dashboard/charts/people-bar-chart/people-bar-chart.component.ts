@@ -11,9 +11,8 @@ import { single } from './data';
 })
 export class PeopleBarChartComponent {
   single!: any[];
-  multi!: any[];
 
-  view: [number, number] = [1700, 400]; // size of the graph
+  // view: [number, number] = [1700, 400]; // size of the graph
 
   // options
   barPadding = 20;

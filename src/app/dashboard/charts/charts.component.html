@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <div class="row-flexbox charts-container" id="person-charts">
     <div class="label-on-chart">
       <p class="chart-label"><b>Persone rilevate</b></p>
@@ -14,8 +14,8 @@
         <button (click)="buttonsChangeColorOnClick(3, 'people-chart')"
           [ngClass]="{'green-button' : togglePeopleChartGroup[3], 'white-button': !togglePeopleChartGroup[3]}">Container
           3</button>
-      </div>
-      <img class="bar-chart" src="assets/chart-persone.png" alt="">
+        </div>
+        <app-people-bar-chart></app-people-bar-chart>
     </div>
     <img class="pie-chart" id="pie-1" src="assets/torta-persone.png" alt="">
   </div>
@@ -35,7 +35,6 @@
           [ngClass]="{'green-button' : toggleAlarmsChartGroup[3], 'white-button': !toggleAlarmsChartGroup[3]}">Container
           3</button>
       </div>
-      <img class="bar-chart" src="assets/chart-allarmi.png" alt="">
     </div>
     <div class="counter-on-pie-chart">
       <img id="pie-2" src="assets/torta-allarmi.png" alt="">

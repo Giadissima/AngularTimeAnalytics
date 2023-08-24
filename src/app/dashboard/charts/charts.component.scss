@@ -5,7 +5,8 @@ $charts-height: 288px;
 .charts-container {
   justify-content: space-between;
   width: 100%;
-  min-height: $charts-height;
+  min-height: 288px;
+  margin-bottom: 80px;
 
   @media (max-width: $media-width) {
     flex-direction: column !important;
@@ -26,7 +27,10 @@ $charts-height: 288px;
 .label-on-chart {
   position: relative;
   margin-right: 40px;
-
+  width: calc(100% - 480px);
+  min-width: 800px;
+  height: 340px;
+  background-color: #f8f8f8;
   p {
     position: absolute;
     top: 4%;
@@ -87,4 +91,16 @@ $charts-height: 288px;
 
 #pie-2{
   height:$charts-height;
+}
+
+.chart{
+  width: 1vw;
+  @media (max-width: $media-width) {
+    max-width: $media-width;
+    min-width: 800px;
+  }
+
+  @media (min-width: $media-width) {
+    min-width: $media-width;
+  }
 }

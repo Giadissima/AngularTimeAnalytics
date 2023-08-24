@@ -10,6 +10,7 @@ import { TestComponent } from './test/test.component';
 import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
 import { AlarmsBarChartComponent } from './dashboard/charts/alarms-bar-chart/alarms-bar-chart.component';
 import { PeopleBarChartComponent } from './dashboard/charts/people-bar-chart/people-bar-chart.component';
+import { PeoplePieChartComponent } from './dashboard/charts/people-pie-chart/people-pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PeopleBarChartComponent } from './dashboard/charts/people-bar-chart/peo
     ToolbarComponent,
     AlarmsBarChartComponent,
     PeopleBarChartComponent,
+    PeoplePieChartComponent,
   ],
   imports: [
     BrowserModule,
