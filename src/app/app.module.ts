@@ -11,6 +11,7 @@ import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
 import { AlarmsBarChartComponent } from './dashboard/charts/alarms-bar-chart/alarms-bar-chart.component';
 import { PeopleBarChartComponent } from './dashboard/charts/people-bar-chart/people-bar-chart.component';
 import { PeoplePieChartComponent } from './dashboard/charts/people-pie-chart/people-pie-chart.component';
+import { AlarmsPieChartComponent } from './dashboard/charts/alarms-pie-chart/alarms-pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PeoplePieChartComponent } from './dashboard/charts/people-pie-chart/peo
     AlarmsBarChartComponent,
     PeopleBarChartComponent,
     PeoplePieChartComponent,
+    AlarmsPieChartComponent,
   ],
   imports: [
     BrowserModule,

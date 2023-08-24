@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { single } from './data';
 
 @Component({
-  selector: 'app-people-pie-chart',
-  templateUrl: './people-pie-chart.component.html',
-  styleUrls: ['./people-pie-chart.component.scss']
+  selector: 'app-alarms-pie-chart',
+  templateUrl: './alarms-pie-chart.component.html',
+  styleUrls: ['./alarms-pie-chart.component.scss']
 })
-export class PeoplePieChartComponent {
+export class AlarmsPieChartComponent {
   single!: any[];
 
   // options

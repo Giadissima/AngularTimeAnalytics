@@ -1,11 +1,4 @@
 @import "../../../../styles.scss";
-$charts-width: 20%;
-
-ngx-charts-chart {
-  background-color: #f0f0f0;
-  /* Cambia il colore dello sfondo del grafico */
-  width: $charts-width;
-}
 
 .test {
   background-color: $gray;
