@@ -53,19 +53,18 @@ $charts-height: 288px;
 //   }
 // }
 
-// .buttons-on-chart {
-//   position: absolute;
-//   right: 4%;
-//   justify-content: space-between !important;
-//   width: 30% !important;
-//   top: 4%;
-//   height: 10% !important;
+.buttons-on-chart {
+  position: absolute;
+  right: 4%;
+  justify-content: space-between !important;
+  width: 40% !important;
+  top: 2%;
+  height: 7% !important;
 
-//   button {
-//     padding: 0 4% 0 4%; //top right bottom left
-
-//   }
-// }
+  button {
+    padding: 0 4% 0 4%; //top right bottom left
+  }
+}
 
 // .counter-on-pie-chart {
 //   position: relative;
