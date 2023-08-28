@@ -1,8 +1,7 @@
   @import "../../styles.scss";
 
   .main-container {
-    align-items: flex-start !important;
-    justify-content: flex-start;
+    width: calc(100% - 30px);
   }
 
   // ? ---- Back button -------------------------------------

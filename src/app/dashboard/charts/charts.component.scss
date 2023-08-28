@@ -3,104 +3,112 @@
 $charts-height: 288px;
 
 .charts-container {
-  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 100px;
   width: 100%;
-  min-height: 288px;
-  margin-bottom: 80px;
-
-  @media (max-width: $media-width) {
-    flex-direction: column !important;
-    align-items: center;
+  height: 400px;
+  @media (max-width: 1218px) {
+    flex-direction: column;
   }
 }
 
-.bar-chart {
-  width: 100%;
-  margin-right: 40px;
-  height: $charts-height;
-}
-
-#person-charts {
-  padding-bottom: 4%;
-}
-
-.label-on-chart {
-  position: relative;
-  margin-right: 40px;
-  width: calc(100% - 480px);
-  min-width: 800px;
-  height: 340px;
-  background-color: #f8f8f8;
-  p {
-    position: absolute;
-    top: 4%;
-    left: 4%;
-    color: $dark-gray;
+.bar-chart{
+  background-color: $gray;
+  width: calc(100% - 420px);
+  height: 400px;
+  margin-right: 20px;
+  @media (max-width: 1218px) {
+    margin-top: 40%;
+    width: 90%;
   }
 }
 
-.buttons-on-chart {
-  position: absolute;
-  right: 4%;
-  justify-content: space-between !important;
-  width: 30% !important;
-  top: 4%;
-  height: 10% !important;
-
-  button {
-    padding: 0 4% 0 4%; //top right bottom left
-
-  }
+.pie-chart{
+  height: 400px;
 }
 
-.counter-on-pie-chart {
-  position: relative;
-  display: inline-block;
-  margin-right: 40px;
-  height: $charts-height;
+// .label-on-chart {
+//   position: relative;
+//   margin-right: 40px;
+//   min-width: 800px;
+//   height: 340px;
+//   background-color: #f8f8f8;
+//   p {
+//     position: absolute;
+//     top: 4%;
+//     left: 4%;
+//     color: $dark-gray;
+//   }
+//   @media (min-width: 1218px) {
+//     width: calc(100% - 480px);
+//   }
+//   @media (max-width: 1217px) {
+//     width: calc(100% - 50px);
+//   }
+// }
 
-  .text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: $dark-gray;
+// .buttons-on-chart {
+//   position: absolute;
+//   right: 4%;
+//   justify-content: space-between !important;
+//   width: 30% !important;
+//   top: 4%;
+//   height: 10% !important;
 
-    p {
-      margin: 0;
-    }
+//   button {
+//     padding: 0 4% 0 4%; //top right bottom left
 
-    .number {
-      font-size: 2rem;
-      margin-bottom: 2%;
-    }
-  }
-}
+//   }
+// }
 
-.chart-label {
-  font-size: 1rem;
-}
+// .counter-on-pie-chart {
+//   position: relative;
+//   display: inline-block;
+//   margin-right: 40px;
+//   height: $charts-height;
+
+//   .text {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     text-align: center;
+//     color: $dark-gray;
+
+//     p {
+//       margin: 0;
+//     }
+
+//     .number {
+//       font-size: 2rem;
+//       margin-bottom: 2%;
+//     }
+//   }
+// }
 
 
-#pie-1{
-  width: $charts-height;
-  height: $charts-height;
-  margin-right: 40px;
-}
+// #pie-1{
+//   width: $charts-height;
+//   height: $charts-height;
+//   margin-right: 40px;
+// }
 
-#pie-2{
-  height:$charts-height;
-}
+// #pie-2{
+//   height:$charts-height;
+// }
 
-.chart{
-  width: 1vw;
-  @media (max-width: $media-width) {
-    max-width: $media-width;
-    min-width: 800px;
-  }
+// .chart{
+//   width: 1vw;
+//   @media (max-width: $media-width) {
+//     max-width: $media-width;
+//     min-width: 800px;
+//   }
 
-  @media (min-width: $media-width) {
-    min-width: $media-width;
-  }
-}
+//   @media (min-width: $media-width) {
+//     min-width: $media-width;
+//   }
+// }
