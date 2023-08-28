@@ -33,32 +33,12 @@ $charts-height: 288px;
   height: 400px;
 }
 
-// .label-on-chart {
-//   position: relative;
-//   margin-right: 40px;
-//   min-width: 800px;
-//   height: 340px;
-//   background-color: #f8f8f8;
-//   p {
-//     position: absolute;
-//     top: 4%;
-//     left: 4%;
-//     color: $dark-gray;
-//   }
-//   @media (min-width: 1218px) {
-//     width: calc(100% - 480px);
-//   }
-//   @media (max-width: 1217px) {
-//     width: calc(100% - 50px);
-//   }
-// }
-
 .buttons-on-chart {
   position: absolute;
   right: 4%;
   justify-content: space-between !important;
   width: 40% !important;
-  top: 2%;
+  top: 12px;
   height: 7% !important;
 
   button {
@@ -66,57 +46,9 @@ $charts-height: 288px;
   }
 }
 
-// .counter-on-pie-chart {
-//   position: relative;
-//   display: inline-block;
-//   margin-right: 40px;
-//   height: $charts-height;
-
-//   .text {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     text-align: center;
-//     color: $dark-gray;
-
-//     p {
-//       margin: 0;
-//     }
-
-//     .number {
-//       font-size: 2rem;
-//       margin-bottom: 2%;
-//     }
-//   }
-// }
-
-
-// #pie-1{
-//   width: $charts-height;
-//   height: $charts-height;
-//   margin-right: 40px;
-// }
-
-// #pie-2{
-//   height:$charts-height;
-// }
-
-// .chart{
-//   width: 1vw;
-//   @media (max-width: $media-width) {
-//     max-width: $media-width;
-//     min-width: 800px;
-//   }
-
-//   @media (min-width: $media-width) {
-//     min-width: $media-width;
-//   }
-// }
-
 .chart-label{
   position: absolute;
-  top: 2%;
+  top: 5px;
   left: 4%;
   font-size: medium;
   color: $dark-gray;

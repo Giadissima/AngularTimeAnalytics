@@ -4,52 +4,44 @@ $interval-container-width: 812px;
 
 // ? ---- Interval selector -------------------------------
 
-.interval-flexbox {
-  justify-content: flex-start !important;
-  align-items: flex-start !important;
-  flex-flow: row wrap;
+.toolbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  min-width: 1322px;
-  max-height: max-content;
-  margin-bottom: 20px;
-  margin-top: 10px;
-
-  div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2%;
-  }
+  height: auto;
+  gap: 2%;
+  flex-wrap: wrap;
 }
 
 .interval-preset {
-  width: 30%;
-  max-height: 40px;
-  min-width: 540px;
-  margin-top: 20px;
-  margin-right: 40px;
-  height: $toolbar-height;
+  width: 34%;
+  justify-content: space-between !important;
+  // max-height: 40px;
+  // min-width: 540px;
+  // margin-top: 20px;
+  // margin-right: 40px;
+  // height: $toolbar-height;
 
   p {
     white-space: nowrap;
   }
 
   button {
+    height: 30px;
     padding: 0 3% 0 3%; //top right bottom left
   }
 }
 
 .interval-date-time {
-  width: $select-container-width;
-  height: $toolbar-height;
-  width: 290px;
-  min-width: 290px;
+  width: 48.5%;
+
 }
 
 .interval-time-flexbox {
-  height: $toolbar-height;
-  min-width: 136px;
+//   height: $toolbar-height;
+//   min-width: 136px;
   width: 10%;
 }
 
@@ -57,6 +49,7 @@ $interval-container-width: 812px;
   height: $toolbar-height;
   min-width: 136px;
   width: 6%;
+  gap:5%;
 
   select {
     width: 55%;
@@ -72,7 +65,7 @@ $interval-container-width: 812px;
   width: 7%;
 }
 
-//TODO when focused a strange border appears
+// //TODO when focused a strange border appears
 .input-with-icon-container {
   position: relative;
   display: inline-block;
@@ -89,14 +82,21 @@ $interval-container-width: 812px;
 // TODO cambiare la freccina alla select
 
 #interval {
-  width: 40%;
+  justify-content: space-between !important;
   height: $toolbar-height;
 }
 
 .interval-container{
-  width: 57%;
-  gap:6%;
-  margin-top: 20px;
-  min-width: 769px;
+  width: 64%;
+  gap: 2%;
   flex-wrap: nowrap;
+}
+
+.interval-begin-end-container{
+  width: 92%;
+}
+
+.divider{
+  width: 3%;
+  text-align: center;
 }
