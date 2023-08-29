@@ -1,3 +1,4 @@
+@import "../../../styles.scss";
 $select-container-width: 280px;
 $toolbar-height: 1.8rem;
 $interval-container-width: 812px;
@@ -13,16 +14,13 @@ $interval-container-width: 812px;
   height: auto;
   gap: 2%;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .interval-preset {
-  width: 34%;
+  width: 36%;
   justify-content: space-between !important;
-  // max-height: 40px;
-  // min-width: 540px;
-  // margin-top: 20px;
-  // margin-right: 40px;
-  // height: $toolbar-height;
+  min-width: 458px;
 
   p {
     white-space: nowrap;
@@ -36,7 +34,25 @@ $interval-container-width: 812px;
 
 .interval-date-time {
   width: 48.5%;
+  min-width: 253px;
+  input{
+    width: 50% !important;
+    min-width: 165px;
+    margin-right: 20px;
+  }
 
+  select{
+    min-width: 52px;
+    width: 20% !important;
+  }
+}
+
+#interval-begin{
+  justify-content: flex-start !important;
+}
+
+#interval-end{
+  justify-content: flex-end !important;
 }
 
 .interval-time-flexbox {
@@ -87,10 +103,24 @@ $interval-container-width: 812px;
 }
 
 .interval-container{
-  width: 64%;
+  width: 62%;
   gap: 2%;
-  flex-wrap: nowrap;
-}
+  min-width: 670px;
+  align-items: flex-start !important;
+  flex-direction: row !important;
+  @media (max-width: 716px) {
+    #time-interval{
+      margin-top: 10px;
+    }
+    flex-direction: column !important;
+    #interval{
+      margin-top: 10px;
+    }
+  }
+  @media(min-width: 717px ) and (max-width: 1348px){
+    margin-top: 10px;
+  }
+} 
 
 .interval-begin-end-container{
   width: 92%;
