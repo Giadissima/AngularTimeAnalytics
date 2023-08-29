@@ -32,13 +32,18 @@ $interval-container-width: 812px;
   }
 }
 
+.date-picker-container{
+  margin-right: 10px;
+}
+
 .interval-date-time {
   width: 48.5%;
-  min-width: 253px;
-  input{
-    width: 50% !important;
-    min-width: 165px;
-    margin-right: 20px;
+  min-width: 263px;
+  
+  dp-date-picker.dp-material .dp-picker-input {
+    width: 177px !important;
+    min-width: 165px !important;
+    margin-right: 20px !important;
   }
 
   select{
@@ -79,20 +84,6 @@ $interval-container-width: 812px;
   right: 2%;
   height: 53%;
   width: 7%;
-}
-
-// //TODO when focused a strange border appears
-.input-with-icon-container {
-  position: relative;
-  display: inline-block;
-  margin-right: 2%;
-  height: 100%;
-  width: 100%;
-
-  input {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 // TODO cambiare la freccina alla select

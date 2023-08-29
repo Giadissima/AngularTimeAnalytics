@@ -18,7 +18,10 @@
       <div class="row-flexbox" id="interval">
         <div class="row-flexbox interval-date-time" id="interval-begin">
           <!-- <div class="input-with-icon-container"> -->
-            <input type="text" placeholder="Intervallo temporale - Inizio">
+            <!-- TODO come fare a mettere a questo componente una width diversa? -->
+            <div class="date-picker-container">
+              <dp-date-picker placeholder="Intervallo temporale - Inizio" theme="dp-material"></dp-date-picker>
+            </div>
             <!-- <img src="assets/calendario.png" alt="" class="icon-inside-input"> -->
           <!-- </div> -->
           <select name="" id="">
@@ -26,10 +29,12 @@
             <option value="" *ngFor="let time of time_interval;">{{time}}</option>
           </select>
         </div>
-        <p class="divider"> - </p>
+        <p class="divider">  -  </p>
         <div class="row-flexbox interval-date-time" id="interval-end">
           <!-- <div class="input-with-icon-container"> -->
-            <input type="text" placeholder="Intervallo temporale - Fine">
+            <div class="date-picker-container">
+              <dp-date-picker placeholder="Intervallo temporale - Fine" theme="dp-material"></dp-date-picker>
+            </div>
             <!-- <img src="assets/calendario.png" alt="" class="icon-inside-input"> -->
           <!-- </div> -->
           <select name="" id="">
