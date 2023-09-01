@@ -1,100 +1,4 @@
 //* General styles file */
-// @import '~@angular/cdk/overlay-prebuilt.css';
-
-// ? ---- variables declarations -----------------------------------
-$font-size: 0.7rem; 
-$font: 'Roboto', sans-serif;
-$gray: #f8f8f8;
-$dark-gray: #7b7b7b;
-$green: #44b182;
-$media-width: 1217px;
-
-// ? ---- body settings --------------------------------------------
-body{
-  // TODO come posso risolvere il problema della pagina che si muove diminuendo lo spazio nello schermo?
-  margin-top: 84px;
-  margin-left: 20px;
-  margin-right: 10px; 
-  font-family: 'Roboto', sans-serif;
-  min-width: 700px;
-  font-size: small;
-}
-
-// ? ---- general classes declarations ------------------------------
-
-.row-flexbox {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.column-flexbox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-
-// ? ---- general styles applied on entire typologies of element ----
-
-p{
-  font-family: $font;
-  font-size: $font-size;
-  color: $dark-gray;
-}
-
-button{
-  font-size: $font-size;
-  padding-left: 2%;
-  height: 100%;
-  // TODO color on typescript - dark gray
-  white-space: nowrap;
-  background-color: white;
-  border-radius: 0.2rem;
-  box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.3);
-  border: none;
-}
-
-select{
-  height: 100%;
-  width: 40%;
-  text-align: center;
-  font-size: $font-size;
-  border: none;
-  border-bottom: 1px solid $dark-gray;
-  background-color: $gray;
-  color: $dark-gray;
-
-}
-
-input{
-  font-size: $font-size;
-  color: $dark-gray;
-  height: 100%;
-  border: none;
-  padding: 0 0 0 6%; //top right bottom left
-  border-bottom: 1px solid $dark-gray;
-  background-color: $gray;
-}
-
-// ? ---- Buttons styles ---------------------------------
-
-.green-button {
-  background-color: $green;
-  color: white;
-}
-
-.white-button {
-  background-color: white;
-  color: $dark-gray;
-}
-
-
 // ? creation of custom material theme
 
 /**
@@ -356,3 +260,97 @@ mat-form-field .mat-mdc-form-field-bottom-align {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// ? ---- variables declarations -----------------------------------
+$font-size: 0.7rem; 
+$font: 'Roboto', sans-serif;
+$gray: #f8f8f8;
+$dark-gray: #7b7b7b;
+$green: #44b182;
+$media-width: 1217px;
+
+// ? ---- body settings --------------------------------------------
+body{
+  // TODO come posso risolvere il problema della pagina che si muove diminuendo lo spazio nello schermo?
+  margin-top: 84px;
+  margin-left: 20px;
+  margin-right: 10px; 
+  font-family: 'Roboto', sans-serif;
+  min-width: 700px;
+  font-size: small;
+}
+
+// ? ---- general classes declarations ------------------------------
+
+.row-flexbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.column-flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+// ? ---- general styles applied on entire typologies of element ----
+
+p{
+  font-family: $font;
+  font-size: $font-size;
+  color: $dark-gray;
+}
+
+button{
+  font-size: $font-size;
+  padding-left: 2%;
+  height: 100%;
+  // TODO color on typescript - dark gray
+  white-space: nowrap;
+  background-color: white;
+  border-radius: 0.2rem;
+  box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+select{
+  height: 100%;
+  width: 40%;
+  text-align: center;
+  font-size: $font-size;
+  border: none;
+  border-bottom: 1px solid $dark-gray;
+  background-color: $gray;
+  color: $dark-gray;
+
+}
+
+input{
+  font-size: $font-size;
+  color: $dark-gray;
+  height: 100%;
+  border: none;
+  padding: 0 0 0 6%; //top right bottom left
+  border-bottom: 1px solid $dark-gray;
+  background-color: $gray;
+}
+
+// ? ---- Buttons styles ---------------------------------
+
+.green-button {
+  background-color: $green;
+  color: white;
+}
+
+.white-button {
+  background-color: white;
+  color: $dark-gray;
+}
