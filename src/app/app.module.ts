@@ -12,6 +12,7 @@ import { PeopleBarChartComponent } from './dashboard/charts/people-bar-chart/peo
 import { PeoplePieChartComponent } from './dashboard/charts/people-pie-chart/people-pie-chart.component';
 import { TestComponent } from './test/test.component';
 import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
     NgxChartsModule,
     DpDatePickerModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
