@@ -345,12 +345,22 @@ input{
 
 // ? ---- Buttons styles ---------------------------------
 
-.green-button {
-  background-color: $green;
-  color: white;
-}
+// .green-button {
+//   background-color: $green;
+//   color: white;
+// }
 
-.white-button {
-  background-color: white;
-  color: $dark-gray;
+// .white-button {
+//   background-color: white;
+//   color: $dark-gray;
+// }
+
+.mat-buttons{
+  button{
+    height: 40px;
+    color: black;
+    font-size: 12px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
 }

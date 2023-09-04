@@ -1,9 +1,9 @@
 @import "../../../styles.scss";
 $select-container-width: 280px;
-$toolbar-height: 1.8rem;
+$toolbar-height: 50px;
 $interval-container-width: 812px;
 
-// ? ---- Interval selector -------------------------------
+// ? ---- General container -------------------------------
 
 .toolbar-container {
   display: flex;
@@ -11,44 +11,104 @@ $interval-container-width: 812px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  // TODO mettere toolbar-height * numero righe + margin
   height: auto;
   gap: 2%;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.interval-preset {
-  width: 36%;
-  justify-content: space-between !important;
-  min-width: 458px;
+// ? ---- Buttons styles ----------------------------------
 
-  p {
+.interval-preset {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: $toolbar-height;
+  justify-content: space-between !important;
+  min-width: 578px;
+
+  p{
     white-space: nowrap;
   }
 
-  button {
-    height: 30px;
-    padding: 0 3% 0 3%; //top right bottom left
+  @media (max-width: 947px) {
+    width: 70% !important;
+  }
+
+  // ? seconda riga
+  @media(min-width: 948px ) and (max-width: 1521px){
+    width: 50% !important;
   }
 }
 
-.date-picker-container{
-  margin-right: 10px;
+// ? ---- Interval selector ------------------
+
+.interval-container{
+  width: 58%;
+  height: $toolbar-height;
+  gap: 2%;
+  min-width: 876px;
+  align-items: flex-start !important;
+  flex-direction: row !important;
+
+  // ? terza riga
+  @media (max-width: 947px) {
+    flex-direction: column !important;
+    height: calc($toolbar-height * 2 + 20px);
+
+    #time-interval{
+      margin-top: 10px;
+    }
+
+    .interval-begin-end-container{
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+    width: 70%;
+
+  }
+
+  // ? seconda riga
+  @media(min-width: 948px ) and (max-width: 1521px){
+    margin-top: 10px;
+    height: calc($toolbar-height * 3 + 10px);
+    width: 73%;
+    .interval-begin-end-container{
+      margin-left: 0px;
+    }
+  }
 }
+
+// TODO riguardare with-min e max delle div contenenti i datepicker e gli intervalli
+
+.interval-begin-end-container{
+  width: 88%;
+  margin-left: 20px;
+  min-width: 680px;
+  justify-content: space-between !important;
+  height: $toolbar-height;
+}
+
+// ? ---- Selection date, frequency and time ---------
 
 .interval-date-time {
   width: 48.5%;
   min-width: 263px;
+  height: $toolbar-height;
   
-  dp-date-picker.dp-material .dp-picker-input {
-    width: 177px !important;
-    min-width: 165px !important;
+  .date-picker {
+    width: 257px !important;
+    height: $toolbar-height;
+    min-width: 190px !important;
     margin-right: 20px !important;
   }
 
-  select{
-    min-width: 52px;
-    width: 20% !important;
+  .select{
+    min-width: 94px;
+    width: 25% !important;
+    height: $toolbar-height;
   }
 }
 
@@ -56,68 +116,23 @@ $interval-container-width: 812px;
   justify-content: flex-start !important;
 }
 
-#interval-end{
-  justify-content: flex-end !important;
+#divider{
+  text-align: center;
 }
 
-.interval-time-flexbox {
-//   height: $toolbar-height;
-//   min-width: 136px;
-  width: 10%;
+#interval-end{
+  justify-content: flex-end !important;
 }
 
 #time-interval {
   height: $toolbar-height;
   min-width: 136px;
-  width: 6%;
+  margin-right: 20px;
+  width: 11%;
   gap:5%;
 
-  select {
-    width: 55%;
+  .select {
+    width: 100%;
+    height: 100%;
   }
-}
-
-// ? ---- Icons inside inputs ---------------------------------
-
-.icon-inside-input {
-  position: absolute;
-  right: 2%;
-  height: 53%;
-  width: 7%;
-}
-
-// TODO cambiare la freccina alla select
-
-#interval {
-  justify-content: space-between !important;
-  height: $toolbar-height;
-}
-
-.interval-container{
-  width: 62%;
-  gap: 2%;
-  min-width: 670px;
-  align-items: flex-start !important;
-  flex-direction: row !important;
-  @media (max-width: 716px) {
-    #time-interval{
-      margin-top: 10px;
-    }
-    flex-direction: column !important;
-    #interval{
-      margin-top: 10px;
-    }
-  }
-  @media(min-width: 717px ) and (max-width: 1348px){
-    margin-top: 10px;
-  }
-} 
-
-.interval-begin-end-container{
-  width: 92%;
-}
-
-.divider{
-  width: 3%;
-  text-align: center;
 }
