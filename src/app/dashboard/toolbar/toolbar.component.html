@@ -1,59 +1,73 @@
 <div class="toolbar-container">
   <div class="row-flexbox interval-preset">
     <p>Quick preset:</p>
-    <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(0)"
+    <button mat-raised-button color="primary" (click)="buttonsChangeColorOnClick(0)"
       [ngClass]="{'green-button' : toggleGroup[0], 'white-button': !toggleGroup[0]}">Ultima ora</button>
-    <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(1)"
+    <button mat-raised-button color="primary" (click)="buttonsChangeColorOnClick(1)"
       [ngClass]="{'green-button' : toggleGroup[1], 'white-button': !toggleGroup[1]}">Oggi</button>
-    <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(2)"
+    <button mat-raised-button color="primary" (click)="buttonsChangeColorOnClick(2)"
       [ngClass]="{'green-button' : toggleGroup[2], 'white-button': !toggleGroup[2]}">Ieri</button>
-    <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(3)"
+    <button mat-raised-button color="primary" (click)="buttonsChangeColorOnClick(3)"
       [ngClass]="{'green-button' : toggleGroup[3], 'white-button': !toggleGroup[3]}">Ultima
       settimana</button>
-    <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(4)"
+    <button mat-raised-button color="primary" (click)="buttonsChangeColorOnClick(4)"
       [ngClass]="{'green-button' : toggleGroup[4], 'white-button': !toggleGroup[4]}">Ultimo mese</button>
   </div>
   <div class="row-flexbox interval-container">
     <div class="interval-begin-end-container">
       <div class="row-flexbox" id="interval">
         <div class="row-flexbox interval-date-time" id="interval-begin">
-            <mat-form-field>
-              <mat-label>Inizio temporale - Inizio</mat-label>
-              <input matInput [matDatepicker]="picker">
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-          <mat-label>Ora</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let time of time_interval;" [value]="time">
-              {{time}}
-            </mat-option>
-          </mat-select>
+          <mat-form-field>
+            <mat-label>Inizio temporale - Inizio</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="dateBeginDatePicker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <!-- TODO questo è la demo presa da https://stackblitz.com/edit/angular-n9yojx?file=src%2Fapp%2Fapp.component.ts,src%2Fapp%2Fapp.component.html ma non funziona lo stesso  -->
+          <!-- <mat-form-field>
+            <input matInput [matDatepicker]="picker" autocomplete="off" name="date"
+              formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker [startAt]="dateBeginDatePicker" #picker></mat-datepicker>
+          </mat-form-field> -->
+
+          <mat-form-field>
+            <mat-label>Ora</mat-label>
+            <mat-select [(ngModel)]="selectBeginTime">
+              <mat-option *ngFor="let time of time_interval;" [value]="time">
+                {{time}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-        <p class="divider">  -  </p>
+        <p class="divider"> - </p>
         <div class="row-flexbox interval-date-time" id="interval-end">
-            <mat-form-field>
-              <mat-label>Intervallo temporale - Fine</mat-label>
-              <input matInput [matDatepicker]="picker2">
-              <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
-              <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
-          <mat-label>Ora: </mat-label>
-          <mat-select>
-            <mat-option *ngFor="let time of time_interval;" [value]="time">
-              {{time}}
-            </mat-option>
-          </mat-select>
+          <mat-form-field>
+            <mat-label>Intervallo temporale - Fine</mat-label>
+            <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Ora: </mat-label>
+            <mat-select [(ngModel)]="selectEndTime">
+              <mat-option *ngFor="let time of time_interval;" [value]="time">
+                {{time}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
       </div>
     </div>
     <div class="row-flexbox" id="time-interval">
-      <mat-label>Intervallo</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let time of amount_time_interval;" [value]="time">
-          {{time}}
-        </mat-option>
-      </mat-select>
+      <mat-form-field>
+        <mat-label>Intervallo</mat-label>
+        <mat-select [(ngModel)]="intervallo">
+          <mat-option *ngFor="let time of amount_time_interval;" [value]="time">
+            {{time}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
 </div>

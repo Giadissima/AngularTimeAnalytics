@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ChartsComponent } from './dashboard/charts/charts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DpDatePickerModule } from 'ng2-date-picker';
+import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -45,6 +46,7 @@ import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
     MatNativeDateModule,
     AppRoutingModule,
     MatDatepickerModule,
+    FormsModule,
     BrowserAnimationsModule,
   ],
   providers: [],

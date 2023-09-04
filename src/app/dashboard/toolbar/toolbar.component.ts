@@ -1,11 +1,24 @@
-import { Component } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  OnInit,
+} from '@angular/core';
+
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
+  dateBeginDatePicker = new Date();
+  dateEndDatePicker = new Date();
+  selectBeginTime = '';
+  selectEndTime = '';
+  intervallo = '';
+
   time_interval = [
     '00:00',
     '01:00',
@@ -34,12 +47,20 @@ export class ToolbarComponent {
     '23:00',
   ];
 
+  ngOnInit(): void {
+    this.dateBeginDatePicker = new Date(2023, 7, 1);
+    this.dateEndDatePicker = new Date(2023, 7, 1);
+    this.selectBeginTime = '12:00';
+    this.selectEndTime = '22:00';
+    this.intervallo = '1 ora';
+  }
+
   amount_time_interval = ['1 ora', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
 
   toggleGroup: boolean[] = [false, false, true, false, false];
 
   buttonsChangeColorOnClick(i: number) {
-      this.toggleGroup.fill(false);
-      this.toggleGroup[i] = true;
+    this.toggleGroup.fill(false);
+    this.toggleGroup[i] = true;
   }
 }
