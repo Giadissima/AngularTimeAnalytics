@@ -1,5 +1,5 @@
 import { ChartFilter, DataChart } from 'src/app/models/chart.dto';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Color } from '@swimlane/ngx-charts';
 import alarmsData from './alarms.data.json';
@@ -17,26 +17,22 @@ export class BarChartComponent implements OnInit {
     domain: ['#ff0309']
   } as string | Color;
 
+  @Input() dataAssets:string = '';
   result: DataChart[] = []
-
-  constructor() {
-    // TOT = 168 items
-    // console.log(alarmsData);
-    // debugger;
-    // console.log(this.takeDataFromJsonByFilters({dataAssets: 'alarms'}));
-    // console.log(this.takeDataFromJsonByFilters({dataAssets: 'alarms', fromDate: new Date(2023,8,4,0,0), toDate: new Date(2023,8,7,23,0)}));
-  }
+  
+  // ? debugger;
+  // ? TOT 168 items
+  
+  constructor() {}
 
   ngOnInit(){
-    // TODO passarli attraverso Input dal padre
-    this.result = this.takeDataFromJsonByFilters({dataAssets: 'alarms'})
-    console.log(this.result);
+    this.result = this.takeDataFromJsonByFilters()
   }
   
-  takeDataFromJsonByFilters(filters: ChartFilter){
-    const data = filters.dataAssets == 'alarms'? alarmsData : peopleData;
+  takeDataFromJsonByFilters(filters?: ChartFilter){
+    const data = this.dataAssets == 'alarms'? alarmsData : peopleData;
 
-    if(!filters.fromDate || !filters.toDate) return data;
+    if(!filters || !filters.fromDate || !filters.toDate) return data;
 
     return data.filter((obj: DataChart) => {
       const objDate = new Date(obj.name);

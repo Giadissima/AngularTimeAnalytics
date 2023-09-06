@@ -1,7 +1,6 @@
 export interface ChartFilter{
   fromDate?: Date, 
-  toDate?: Date,
-  dataAssets: 'alarms' | 'people'
+  toDate?: Date
 }
 
 export interface DataChart{
