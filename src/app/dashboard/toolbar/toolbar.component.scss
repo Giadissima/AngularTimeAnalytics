@@ -2,6 +2,7 @@
 $select-container-width: 280px;
 $toolbar-height: 50px;
 $interval-container-width: 812px;
+$second-line-px: 1565px;
 
 // ? ---- General container -------------------------------
 
@@ -11,7 +12,6 @@ $interval-container-width: 812px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  // TODO mettere toolbar-height * numero righe + margin
   height: auto;
   gap: 2%;
   flex-wrap: wrap;
@@ -24,22 +24,18 @@ $interval-container-width: 812px;
 .interval-preset {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 39%;
   height: $toolbar-height;
   justify-content: space-between !important;
-  min-width: 578px;
+  min-width: 582px;
 
   p{
     white-space: nowrap;
   }
 
-  @media (max-width: 947px) {
-    width: 70% !important;
-  }
-
   // ? seconda riga
-  @media(min-width: 948px ) and (max-width: 1521px){
-    width: 50% !important;
+  @media(max-width: $second-line-px){
+    width: 45% !important;
   }
 }
 
@@ -53,28 +49,10 @@ $interval-container-width: 812px;
   align-items: flex-start !important;
   flex-direction: row !important;
 
-  // ? terza riga
-  @media (max-width: 947px) {
-    flex-direction: column !important;
-    height: calc($toolbar-height * 2 + 20px);
-
-    #time-interval{
-      margin-top: 10px;
-    }
-
-    .interval-begin-end-container{
-      margin-top: 10px;
-      margin-left: 0px;
-    }
-    width: 70%;
-
-  }
-
   // ? seconda riga
-  @media(min-width: 948px ) and (max-width: 1521px){
+  @media (max-width: $second-line-px){
     margin-top: 10px;
-    height: calc($toolbar-height * 3 + 10px);
-    width: 73%;
+    width: 60%;
     .interval-begin-end-container{
       margin-left: 0px;
     }

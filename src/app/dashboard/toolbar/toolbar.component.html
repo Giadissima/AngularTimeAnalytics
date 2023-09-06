@@ -18,7 +18,7 @@
       <div class="row-flexbox interval-date-time" id="interval-begin">
         <mat-form-field class="date-picker">
           <mat-label>Inizio temporale - Inizio</mat-label>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="dateBeginDatePicker">
+          <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
