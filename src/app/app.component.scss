@@ -40,39 +40,22 @@ $buttons-min-width: 38px;
 .buttons {
   justify-content: space-between !important;
   flex-wrap: nowrap;
-  margin-right: 2%;
+  margin-right: 10px;
   width: 30%;
   min-width: 326px;
   height: 100%;
   button{
     height: 40px !important;
+    width: 40px !important;
     min-width: 40px !important;
     margin-right: 4px;
   }
   mat-icon {
     text-align: center;
     vertical-align: middle;
-    margin-right: 0px;
-    margin-left: 6px;
+    width: 18px;
+    height: 18px;
+    margin-left: 9px;
+    min-width: 18px;
+  }
 }
-}
-
-button.mat-button {
-  height: 40px;
-  width: 40px;
-}
-
-// .img-to-space{
-//   margin-right: 4%;
-// }
-
-// #zoom-in{
-//   border-right: 0.1px solid rgba(255, 255, 255, 0.4);
-//   /* top-left | top-right | bottom-right | bottom-left */
-//   border-radius: $buttons-border-radius 0 0 $buttons-border-radius;
-// }
-
-// #zoom-out{
-//   /* top-left | top-right | bottom-right | bottom-left */
-//   border-radius: 0 $buttons-border-radius $buttons-border-radius 0;
-// }

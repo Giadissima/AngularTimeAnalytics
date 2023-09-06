@@ -309,51 +309,7 @@ p{
   color: $dark-gray;
 }
 
-button{
-  font-size: $font-size;
-  padding-left: 2%;
-  height: 100%;
-  // TODO color on typescript - dark gray
-  white-space: nowrap;
-  background-color: white;
-  border-radius: 0.2rem;
-  box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.3);
-  border: none;
-}
-
-select{
-  height: 100%;
-  width: 40%;
-  text-align: center;
-  font-size: $font-size;
-  border: none;
-  border-bottom: 1px solid $dark-gray;
-  background-color: $gray;
-  color: $dark-gray;
-
-}
-
-input{
-  font-size: $font-size;
-  color: $dark-gray;
-  height: 100%;
-  border: none;
-  padding: 0 0 0 6%; //top right bottom left
-  border-bottom: 1px solid $dark-gray;
-  background-color: $gray;
-}
-
 // ? ---- Buttons styles ---------------------------------
-
-// .green-button {
-//   background-color: $green;
-//   color: white;
-// }
-
-// .white-button {
-//   background-color: white;
-//   color: $dark-gray;
-// }
 
 .mat-buttons{
   button{
