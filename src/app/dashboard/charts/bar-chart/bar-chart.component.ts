@@ -18,7 +18,7 @@ export class BarChartComponent implements OnInit {
   } as string | Color;
 
   @Input() dataAssets:string = '';
-  result: DataChart[] = []
+  result: DataChart[] = [];
   
   // ? debugger;
   // ? TOT 168 items

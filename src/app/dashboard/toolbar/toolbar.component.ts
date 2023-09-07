@@ -47,6 +47,15 @@ export class ToolbarComponent implements OnInit {
     '23:00',
   ];
 
+  buttonClicked = "Ieri";
+  buttonsColor:  { [key: string]: string }  = {
+    "Ultima ora": 'basic',
+    "Oggi": 'basic',
+    "Ieri": 'primary',
+    "Ultima settimana": 'basic',
+    "Ultimo mese": 'basic',
+  };
+
   ngOnInit(): void {
     this.dateBeginDatePicker = new Date(2023, 7, 1);
     this.dateEndDatePicker = new Date(2023, 7, 1);
@@ -59,8 +68,13 @@ export class ToolbarComponent implements OnInit {
 
   toggleGroup: boolean[] = [false, false, true, false, false];
 
-  buttonsChangeColorOnClick(i: number) {
-    this.toggleGroup.fill(false);
-    this.toggleGroup[i] = true;
+  updateChartByClick(event: Event, nameButtonClicked: string){
+    console.log("button clicked");
+    event.stopPropagation;
+    this.buttonClicked = nameButtonClicked;
+    Object.keys(this.buttonsColor).forEach((key) => {
+      this.buttonsColor[key] = 'basic'; // Puoi impostare qui il valore di default desiderato
+    });
+    this.buttonsColor[nameButtonClicked] = 'primary';
   }
 }

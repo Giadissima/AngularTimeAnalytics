@@ -2,16 +2,12 @@
   <div class="bar-chart">
     <p class="chart-label"><b>Persone rilevate</b></p>
     <div class="row-flexbox buttons-on-chart mat-buttons">
-        <button mat-raised-button color="primary" (click)="buttonsChangeColorOnClick(0, 'people-chart')"
-          [ngClass]="{'green-button' : togglePeopleChartGroup[0], 'white-button': !togglePeopleChartGroup[0]}">Tutti</button>
-        <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(1, 'people-chart')"
-          [ngClass]="{'green-button' : togglePeopleChartGroup[1], 'white-button': !togglePeopleChartGroup[1]}">Container
+        <button mat-raised-button [color]="peopleButtonsColor['Tutti']" (click)="updateChartByClick($event, 'people', 'Tutti')">Tutti</button>
+        <button mat-raised-button [color]="peopleButtonsColor['Container 1']" (click)="updateChartByClick($event, 'people', 'Container 1')">Container
           1</button>
-        <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(2, 'people-chart')"
-          [ngClass]="{'green-button' : togglePeopleChartGroup[2], 'white-button': !togglePeopleChartGroup[2]}">Container
+        <button mat-raised-button [color]="peopleButtonsColor['Container 2']" (click)="updateChartByClick($event, 'people', 'Container 2')">Container
           2</button>
-        <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(3, 'people-chart')"
-          [ngClass]="{'green-button' : togglePeopleChartGroup[3], 'white-button': !togglePeopleChartGroup[3]}">Container
+        <button mat-raised-button [color]="peopleButtonsColor['Container 3']" (click)="updateChartByClick($event, 'people', 'Container 3')">Container
           3</button>
       </div>
     <app-people-bar-chart></app-people-bar-chart>
@@ -24,16 +20,12 @@
   <div class="bar-chart">
     <p class="chart-label"><b>Allarmi</b></p>
     <div class="row-flexbox buttons-on-chart mat-buttons ">
-      <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(0, 'alarms-chart')"
-        [ngClass]="{'green-button' : toggleAlarmsChartGroup[0], 'white-button': !toggleAlarmsChartGroup[0]}">Tutti</button>
-      <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(1, 'alarms-chart')"
-        [ngClass]="{'green-button' : toggleAlarmsChartGroup[1], 'white-button': !toggleAlarmsChartGroup[1]}">Container
+      <button mat-raised-button [color]="alarmsButtonsColor['Tutti']" (click)="updateChartByClick($event, 'alarms', 'Tutti')">Tutti</button>
+      <button mat-raised-button [color]="alarmsButtonsColor['Container 1']" (click)="updateChartByClick($event, 'alarms', 'Container 1')">Container
         1</button>
-      <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(2, 'alarms-chart')"
-        [ngClass]="{'green-button' : toggleAlarmsChartGroup[2], 'white-button': !toggleAlarmsChartGroup[2]}">Container
+      <button mat-raised-button [color]="alarmsButtonsColor['Container 2']" (click)="updateChartByClick($event, 'alarms', 'Container 2')">Container
         2</button>
-      <button mat-raised-button color="primary"(click)="buttonsChangeColorOnClick(3, 'alarms-chart')"
-        [ngClass]="{'green-button' : toggleAlarmsChartGroup[3], 'white-button': !toggleAlarmsChartGroup[3]}">Container
+      <button mat-raised-button [color]="alarmsButtonsColor['Container 3']" (click)="updateChartByClick($event, 'alarms', 'Container 3')">Container
         3</button>
     </div>
     <app-alarms-bar-chart></app-alarms-bar-chart>
