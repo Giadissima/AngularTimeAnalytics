@@ -59,3 +59,13 @@ $buttons-min-width: 38px;
     min-width: 18px;
   }
 }
+
+.mat-mdc-raised-button:disabled {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  color: $green;
+}
+
+.mat-mdc-raised-button:not(:disabled)#statistic-button{
+  color: white;
+  background: #69c19b !important;
+}

@@ -3,3 +3,11 @@
 .chart-container {
   background-color: $gray;
 }
+
+::ng-deep .ngx-charts .arc path.line {
+  display: none;
+}
+
+.pie-label-line.animation {
+  display: none !important;
+}

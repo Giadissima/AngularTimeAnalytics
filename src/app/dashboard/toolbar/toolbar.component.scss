@@ -21,7 +21,7 @@ $second-line-px: 1446px;
   margin-right: 20px;
   gap: 10px;
   height: $toolbar-height;
-  width: 39%;
+  width: 40%;
   min-width: 536px;
 }
 
@@ -53,7 +53,7 @@ $second-line-px: 1446px;
 
 // ? ---- Selection date, frequency and time ---------
 #divider{
-  vertical-align: center;
+  margin: 0px;
 }
 
 #time-interval {
