@@ -1,6 +1,7 @@
 export interface ChartFilter{
-  fromDate?: Date, 
-  toDate?: Date
+  fromDate: Date, 
+  toDate: Date,
+  container?: string
 }
 
 export interface DataChart{

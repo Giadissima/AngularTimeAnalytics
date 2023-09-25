@@ -1,11 +1,12 @@
 import {
-  AfterContentInit,
-  AfterViewInit,
   Component,
   OnInit,
+  SimpleChanges,
 } from '@angular/core';
 
-import { FormControl } from '@angular/forms';
+// import { BarChartComponent } from '../charts/bar-chart/bar-chart.component'
+import { compareAsc } from 'date-fns';
+import subDays from 'date-fns/subDays';
 
 @Component({
   selector: 'toolbar',
@@ -13,6 +14,9 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
+
+  // constructor(private barChartComponent: BarChartComponent) { }
+  
   dateBeginDatePicker = new Date();
   dateEndDatePicker = new Date();
   selectBeginTime = '';
@@ -47,13 +51,13 @@ export class ToolbarComponent implements OnInit {
     '23:00',
   ];
 
-  buttonClicked = "Ieri";
-  buttonsColor:  { [key: string]: string }  = {
-    "Ultima ora": 'basic',
-    "Oggi": 'basic',
-    "Ieri": 'primary',
-    "Ultima settimana": 'basic',
-    "Ultimo mese": 'basic',
+  buttonClicked = 'Ieri';
+  buttonsColor: { [key: string]: string } = {
+    'Ultima ora': 'basic',
+    'Oggi': 'basic',
+    'Ieri': 'primary',
+    'Ultima settimana': 'basic',
+    'Ultimo mese': 'basic',
   };
 
   ngOnInit(): void {
@@ -68,13 +72,57 @@ export class ToolbarComponent implements OnInit {
 
   toggleGroup: boolean[] = [false, false, true, false, false];
 
-  updateChartByClick(event: Event, nameButtonClicked: string){
-    console.log("button clicked");
+  updateChartByClick(event: Event, nameButtonClicked: string) {
+    console.log('button clicked');
     event.stopPropagation;
     this.buttonClicked = nameButtonClicked;
     Object.keys(this.buttonsColor).forEach((key) => {
-      this.buttonsColor[key] = 'basic'; // Puoi impostare qui il valore di default desiderato
+      this.buttonsColor[key] = 'basic';
     });
     this.buttonsColor[nameButtonClicked] = 'primary';
+    switch (nameButtonClicked) {
+      case 'Oggi':
+        this.dateBeginDatePicker = new Date();
+        this.dateEndDatePicker = this.dateBeginDatePicker;
+        this.selectBeginTime = '00:00';
+        this.selectEndTime = '23:59';
+        break;
+      case 'Ieri':
+        this.dateBeginDatePicker = subDays(new Date(), 1);
+        this.dateEndDatePicker = this.dateBeginDatePicker;
+        this.selectBeginTime = '00:00';
+        this.selectEndTime = '23:59';
+        break;
+      case 'Ultima ora':
+        let date = new Date();
+        this.dateBeginDatePicker = date;
+        this.dateEndDatePicker = date;
+        this.selectBeginTime = `${date
+          .getHours()
+          .toString()
+          .padStart(2, '0')}:00`;
+        this.selectEndTime = this.selectBeginTime;
+        break;
+      case 'Ultima settimana':
+        this.dateBeginDatePicker = subDays(new Date(), 7);
+        this.dateEndDatePicker = new Date();
+        this.selectBeginTime = '00:00';
+        this.selectEndTime = '23:59';
+        break;
+      case 'Ultimo mese':
+        this.dateBeginDatePicker = subDays(new Date(), 30);
+        this.dateEndDatePicker = new Date();
+        this.selectBeginTime = '00:00';
+        this.selectEndTime = '23:59';
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    // se la data è corretta, chiama un aggiornamento dati
+    let fromDate = this.dateBeginDatePicker;
+    let toDate = this.dateEndDatePicker;
+    fromDate.setHours(parseInt(this.selectBeginTime.split(':')[0],10), 0);
+    toDate.setHours(parseInt(this.selectEndTime.split(':')[0],10), 0);
+    // if(compareAsc(fromDate, toDate)<=0) this.barChartComponent.takeDataFromJsonByFilters({fromDate, toDate});
   }
 }

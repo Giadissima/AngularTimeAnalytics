@@ -1,0 +1,377 @@
+[
+	{
+		"name": "Container 1",
+		"series": [
+			{
+				"name": "2023-09-21T00:00",
+				"people": 0,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T01:00",
+				"people": 1,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T02:00",
+				"people": 3,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T03:00",
+				"people": 4,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T04:00",
+				"people": 11,
+				"alarms": 5
+			},
+			{
+				"name": "2023-09-21T05:00",
+				"people": 7,
+				"alarms": 4
+			},
+			{
+				"name": "2023-09-21T06:00",
+				"people": 8,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T07:00",
+				"people": 3,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T08:00",
+				"people": 8,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T09:00",
+				"people": 4,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T10:00",
+				"people": 4,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T11:00",
+				"people": 2,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T12:00",
+				"people": 1,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T13:00",
+				"people": 0,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T14:00",
+				"people": 8,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T15:00",
+				"people": 3,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T16:00",
+				"people": 8,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T17:00",
+				"people": 4,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T18:00",
+				"people": 4,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T19:00",
+				"people": 2,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T20:00",
+				"people": 1,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T21:00",
+				"people": 0,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T22:00",
+				"people": 2,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T23:00",
+				"people": 1,
+				"alarms": 1
+			}
+		]
+	},
+	{
+		"container_id": 2,
+		"statistics": [
+			{
+				"name": "2023-09-21T00:00",
+				"people": 0,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T01:00",
+				"people": 0,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T02:00",
+				"people": 1,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T03:00",
+				"people": 5,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T04:00",
+				"people": 5,
+				"alarms": 7
+			},
+			{
+				"name": "2023-09-21T05:00",
+				"people": 10,
+				"alarms": 6
+			},
+			{
+				"name": "2023-09-21T06:00",
+				"people": 12,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T07:00",
+				"people": 3,
+				"alarms": 0
+			},
+				{
+				"name": "2023-09-21T08:00",
+				"people": 9,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T09:00",
+				"people": 2,
+				"alarms": 6
+			},
+			{
+				"name": "2023-09-21T10:00",
+				"people": 5,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T11:00",
+				"people": 2,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T12:00",
+				"people": 1,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T13:00",
+				"people": 0,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T14:00",
+				"people": 8,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T15:00",
+				"people": 3,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T16:00",
+				"people": 9,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T17:00",
+				"people": 12,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T18:00",
+				"people": 3,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T19:00",
+				"people": 5,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T20:00",
+				"people": 6,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T21:00",
+				"people": 0,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T22:00",
+				"people": 6,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T23:00",
+				"people": 3,
+				"alarms": 1
+			}
+		]
+	},
+	{
+		"container_id": 3,
+		"statistics": [
+			{
+				"name": "2023-09-21T00:00",
+				"people": 2,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T01:00",
+				"people": 3,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T02:00",
+				"people": 5,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T03:00",
+				"people": 4,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T04:00",
+				"people": 6,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T05:00",
+				"people": 7,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T06:00",
+				"people": 8,
+				"alarms": 4
+			},
+			{
+				"name": "2023-09-21T07:00",
+				"people": 6,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T08:00",
+				"people": 5,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T09:00",
+				"people": 4,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T10:00",
+				"people": 3,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T11:00",
+				"people": 2,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T12:00",
+				"people": 1,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T13:00",
+				"people": 1,
+				"alarms": 0
+			},
+			{
+				"name": "2023-09-21T14:00",
+				"people": 3,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T15:00",
+				"people": 4,
+				"alarms": 1
+			},
+			{
+				"name": "2023-09-21T16:00",
+				"people": 5,
+				"alarms": 2
+			},
+			{
+				"name": "2023-09-21T17:00",
+				"people": 6,
+				"alarms": 3
+			},
+			{
+				"name": "2023-09-21T18:00",
+				"people": 7,
+				"alarms": 4
+			},
+			{
+				"name": "2023-09-21T19:00",
+				"people": 8,
+				"alarms": 5
+			},
+			{
+				"name": "2023-09-21T20:00",
+				"people": 9,
+				"alarms": 6
+			},
+			{
+				"name": "2023-09-21T21:00",
+				"people": 10,
+				"alarms": 7
+			},
+			{
+				"name": "2023-09-21T22:00",
+				"people": 11,
+				"alarms": 8
+			},
+			{
+				"name": "2023-09-21T23:00",
+				"people": 12,
+				"alarms": 9
+			}
+		]
+	}
+]

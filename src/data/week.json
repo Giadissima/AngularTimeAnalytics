@@ -1,0 +1,122 @@
+[
+	{
+		"name": "Container 1",
+		"series": [
+			{
+				"date": "2023-09-18",
+				"number_of_persons": 1,
+				"number_of_alarms": 0
+			},
+			{
+				"date": "2023-09-19",
+				"number_of_persons": 0,
+				"number_of_alarms": 0
+			},
+			{
+				"date": "2023-09-20",
+				"number_of_persons": 2,
+				"number_of_alarms": 2
+			},
+			{
+				"date": "2023-09-21",
+				"number_of_persons": 3,
+				"number_of_alarms": 2
+			},
+			{
+				"date": "2023-09-22",
+				"number_of_persons": 12,
+				"number_of_alarms": 7
+			},
+			{
+				"date": "2023-09-23",
+				"number_of_persons": 5,
+				"number_of_alarms": 6
+			},
+			{
+				"date": "2023-09-24",
+				"number_of_persons": 3,
+				"number_of_alarms": 8
+			}
+		]
+	},
+	{
+		"container_id": 2,
+		"statistics": [
+			{
+				"date": "2023-09-18",
+				"number_of_persons": 4,
+				"number_of_alarms": 1
+			},
+			{
+				"date": "2023-09-19",
+				"number_of_persons": 1,
+				"number_of_alarms": 2
+			},
+			{
+				"date": "2023-09-20",
+				"number_of_persons": 3,
+				"number_of_alarms": 1
+			},
+			{
+				"date": "2023-09-21",
+				"number_of_persons": 2,
+				"number_of_alarms": 3
+			},
+			{
+				"date": "2023-09-22",
+				"number_of_persons": 6,
+				"number_of_alarms": 2
+			},
+			{
+				"date": "2023-09-23",
+				"number_of_persons": 4,
+				"number_of_alarms": 5
+			},
+			{
+				"date": "2023-09-24",
+				"number_of_persons": 5,
+				"number_of_alarms": 3
+			}
+		]
+	},
+	{
+		"container_id": 3,
+		"statistics": [
+			{
+				"date": "2023-09-18",
+				"number_of_persons": 2,
+				"number_of_alarms": 3
+			},
+			{
+				"date": "2023-09-19",
+				"number_of_persons": 4,
+				"number_of_alarms": 1
+			},
+			{
+				"date": "2023-09-20",
+				"number_of_persons": 3,
+				"number_of_alarms": 2
+			},
+			{
+				"date": "2023-09-21",
+				"number_of_persons": 1,
+				"number_of_alarms": 4
+			},
+			{
+				"date": "2023-09-22",
+				"number_of_persons": 7,
+				"number_of_alarms": 1
+			},
+			{
+				"date": "2023-09-23",
+				"number_of_persons": 5,
+				"number_of_alarms": 2
+			},
+			{
+				"date": "2023-09-24",
+				"number_of_persons": 6,
+				"number_of_alarms": 3
+			}
+		]
+	}
+]
