@@ -126,7 +126,7 @@
 	},
 	{
 		"container_id": 2,
-		"statistics": [
+		"series": [
 			{
 				"name": "2023-09-21T00:00",
 				"people": 0,
@@ -251,7 +251,7 @@
 	},
 	{
 		"container_id": 3,
-		"statistics": [
+		"series": [
 			{
 				"name": "2023-09-21T00:00",
 				"people": 2,

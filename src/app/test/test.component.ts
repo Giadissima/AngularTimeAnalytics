@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent {
+  date1 = new Date();
+  date2 = new Date();
   toggleFirstGroup: boolean[] = [true, false, false, false];
   toggleSecondGroup: boolean[] = [false, true, false, false];
   toggleThirdGroup: boolean[] = [false, false, false, true];

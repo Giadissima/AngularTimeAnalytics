@@ -1,5 +1,11 @@
 import { ChartFilter, DataChart } from 'src/app/models/chart.dto';
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { compareAsc, differenceInDays } from 'date-fns';
 
 import { Color } from '@swimlane/ngx-charts';
@@ -13,59 +19,89 @@ import yesterdayData from '../../../../data/yesterday.json';
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss'],
 })
-export class BarChartComponent implements OnInit {
-  barPadding = 20;
-  colorScheme = {
-    domain: ['#ff0309'],
-  } as string | Color;
-
+export class BarChartComponent implements OnInit, OnChanges {
+  
   @Input() dataAssets: string = '';
-  result: any[] = [];
+  @Input() dateBeginSelected!: Date;
+  @Input() dateEndSelected!: Date;
+  @Input() containerSelected: string = '';
+  @Input() color: string = '#ffffff';
+  barPadding = 20;
+  get colorScheme() { return {
+    domain:[this.color]
+  } as Color
+  }
 
+  result: any[] = [];
   // ? debugger;
   // ? TOT 168 items
 
-  constructor() {
-    Object.assign(this, this.result);
-  }
-
   ngOnInit() {
-    this.takeDataFromJsonByFilters({fromDate: new Date(2023, 10, 1), toDate: new Date(2023, 10, 1)})
+    (this.dateBeginSelected = new Date(2023, 10, 1)),
+      (this.dateEndSelected = new Date(2023, 10, 1)),
+      this.takeDataFromJsonByFilters();
   }
 
-  takeDataFromJsonByFilters(filters: ChartFilter) {
+  takeDataFromJsonByFilters() {
     const dataKeyToSearch =
       this.dataAssets == 'alarms' ? 'number_of_alarms' : 'number_of_persons';
     if (
-      !filters ||
-      !filters.fromDate ||
-      !filters.toDate ||
-      compareAsc(filters.fromDate, filters.toDate) > 0
+      !this.dateBeginSelected ||
+      !this.dateEndSelected ||
+      compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0 ||
+      this.containerSelected === ''
     ) {
-      this.result = [];
       return;
     }
 
-    switch (differenceInDays(filters.toDate, filters.fromDate)) {
+    let data: any[] = [];
+    // TODO aggiungere il filters.container
+    switch (differenceInDays(this.dateEndSelected, this.dateBeginSelected)) {
       // caso caricamento dati giornalieri
       case 0:
-        let day = filters.fromDate.getDay();
-        // if (day % 2 == 0) {
+        let day = this.dateBeginSelected.getDay();
+        if (day % 2 == 0) {
           // carica i dati di "oggi"
-          this.result = dayData;
-        // } else {
+          data = dayData;
+        } else {
           // carica i dati di "ieri"
-          // this.result = yesterdayData;
-        // }
+          data = yesterdayData;
+        }
         break;
       // caso caricamento dati settimanali
       case 6:
-        this.result = weekData;
+        data = weekData;
         break;
       case 29 || 30 || 27:
-        this.result = monthData;
+        data = monthData;
         break;
     }
-    console.log(this.result)
+    data.forEach((container) => {
+      if (
+        container &&
+        (this.containerSelected == 'Tutti' ||
+          this.containerSelected == container)
+      ) {
+        container.series.forEach(
+          (item: { people: number; name: string; alarms: number }) => {
+            let founded = this.result.find((el) => el.name === item.name);
+            if (founded !== undefined) {
+              founded.value +=
+                this.dataAssets == 'people' ? item.people : item.alarms;
+            } else {
+              this.result.push({
+                value: this.dataAssets == 'people' ? item.people : item.alarms,
+                name: item.name,
+              });
+            }
+          }
+        );
+      }
+    });
+    console.log("date taken");
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    // this.takeDataFromJsonByFilters();
   }
 }

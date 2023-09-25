@@ -41,7 +41,7 @@
 	},
 	{
 		"container_id": 2,
-		"statistics": [
+		"series": [
 			{
 				"date": "2023-09-18",
 				"number_of_persons": 4,
@@ -81,7 +81,7 @@
 	},
 	{
 		"container_id": 3,
-		"statistics": [
+		"series": [
 			{
 				"date": "2023-09-18",
 				"number_of_persons": 2,
