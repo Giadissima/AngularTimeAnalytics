@@ -10,7 +10,7 @@
   <div class="row-flexbox interval-container">
     <mat-form-field class="date-picker">
       <mat-label>Inizio temporale - Inizio</mat-label>
-      <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker">
+      <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker" (ngModelChange)="sendDate()">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -25,7 +25,7 @@
     <p id="divider"><b> - </b></p>
     <mat-form-field class="date-picker">
       <mat-label>Intervallo temporale - Fine</mat-label>
-      <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker">
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker" (ngModelChange)="sendDate()">
       <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>

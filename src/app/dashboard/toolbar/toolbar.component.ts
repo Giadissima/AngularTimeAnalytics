@@ -1,12 +1,17 @@
 import {
   Component,
+  EventEmitter,
   OnInit,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 
-// import { BarChartComponent } from '../charts/bar-chart/bar-chart.component'
 import { compareAsc } from 'date-fns';
 import subDays from 'date-fns/subDays';
+
+// import { BarChartComponent } from '../charts/bar-chart/bar-chart.component'
+
+
 
 @Component({
   selector: 'toolbar',
@@ -15,6 +20,7 @@ import subDays from 'date-fns/subDays';
 })
 export class ToolbarComponent implements OnInit {
 
+  @Output() sendDateEvent = new EventEmitter<Date>();
   // constructor(private barChartComponent: BarChartComponent) { }
   
   dateBeginDatePicker = new Date();
@@ -72,6 +78,7 @@ export class ToolbarComponent implements OnInit {
 
   toggleGroup: boolean[] = [false, false, true, false, false];
 
+//TODO risolvere problema dati inconsistenti 
   updateChartByClick(event: Event, nameButtonClicked: string) {
     console.log('button clicked');
     event.stopPropagation;
@@ -115,6 +122,7 @@ export class ToolbarComponent implements OnInit {
         this.selectBeginTime = '00:00';
         this.selectEndTime = '23:59';
     }
+    this.sendDate();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -124,5 +132,10 @@ export class ToolbarComponent implements OnInit {
     fromDate.setHours(parseInt(this.selectBeginTime.split(':')[0],10), 0);
     toDate.setHours(parseInt(this.selectEndTime.split(':')[0],10), 0);
     // if(compareAsc(fromDate, toDate)<=0) this.barChartComponent.takeDataFromJsonByFilters({fromDate, toDate});
+  }
+
+  sendDate(){
+    console.log("event")
+    this.sendDateEvent.emit(this.dateEndDatePicker);
   }
 }

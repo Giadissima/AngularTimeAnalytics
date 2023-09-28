@@ -27,10 +27,10 @@ export class BarChartComponent implements OnInit, OnChanges {
   @Input() containerSelected: string = '';
   @Input() color: string = '#ffffff';
   barPadding = 20;
-  get colorScheme() { return {
+  
+  colorScheme = {
     domain:[this.color]
   } as Color
-  }
 
   result: any[] = [];
   // ? debugger;
@@ -40,6 +40,9 @@ export class BarChartComponent implements OnInit, OnChanges {
     (this.dateBeginSelected = new Date(2023, 10, 1)),
       (this.dateEndSelected = new Date(2023, 10, 1)),
       this.takeDataFromJsonByFilters();
+      this.colorScheme = {
+        domain:[this.color]
+      } as Color
   }
 
   takeDataFromJsonByFilters() {
