@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ChartsComponent {
   dateBeginSelected!: Date;
   dateEndSelected!: Date;
+  interval!: string;
   peopleButtonClicked = "Tutti";
   peopleButtonsColor:  { [key: string]: string }  = {
     "Tutti": 'primary',
@@ -43,10 +44,11 @@ export class ChartsComponent {
 
   }
 
-  // Todo data di default da passare
-  setFilter(date:Date[]){
+  // TODO aggiungerci un interfaccia e magari passarlo come obj
+  setFilter(data:[Date, Date, string]){
     // console.log("data: ", date);
-    this.dateBeginSelected = date[0];
-    this.dateEndSelected = date[1];
+    this.dateBeginSelected = data[0];
+    this.dateEndSelected = data[1];
+    this.interval = data[2];
   }
 }

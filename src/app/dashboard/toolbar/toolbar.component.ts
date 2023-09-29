@@ -14,7 +14,7 @@ import subDays from 'date-fns/subDays';
 })
 export class ToolbarComponent implements OnInit {
 
-  @Output() sendDateEvent = new EventEmitter<Date[]>();
+  @Output() sendDateEvent = new EventEmitter<[Date, Date, string]>();
   
   dateBeginDatePicker = new Date();
   dateEndDatePicker = new Date();
@@ -63,7 +63,7 @@ export class ToolbarComponent implements OnInit {
     this.selectBeginTime = '12:00';
     this.selectEndTime = '22:00';
     this.intervallo = '1 ora';
-    this.sendDate()
+    this.sendData()
   }
 
   amount_time_interval = ['1 ora', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
@@ -113,7 +113,7 @@ export class ToolbarComponent implements OnInit {
         this.selectBeginTime = '00:00';
         this.selectEndTime = '23:59';
     }
-    this.sendDate();
+    this.sendData();
   }
 
   ngOnChanges() {
@@ -122,7 +122,7 @@ export class ToolbarComponent implements OnInit {
     this.dateEndDatePicker.setHours(parseInt(this.selectEndTime.split(':')[0],10), 0);
   }
 
-  sendDate(){
-    this.sendDateEvent.emit([this.dateBeginDatePicker, this.dateEndDatePicker]);
+  sendData(){
+    this.sendDateEvent.emit([this.dateBeginDatePicker, this.dateEndDatePicker, this.intervallo]);
   }
 }

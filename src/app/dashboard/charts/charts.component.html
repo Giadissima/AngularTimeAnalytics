@@ -28,7 +28,7 @@
       <button mat-raised-button [color]="alarmsButtonsColor['Container 3']" (click)="updateChartByClick($event, 'alarms', 'Container 3')">Container
         3</button>
     </div>
-    <bar-chart [dataAssets]="'alarms'" [setContainer]="alarmsButtonClicked" [color]="'#ff0309'" [dateBegin]="dateBeginSelected" [dateEnd]="dateEndSelected"></bar-chart>
+    <bar-chart [dataAssets]="'alarms'" [setContainer]="alarmsButtonClicked" [color]="'#ff0309'" [dateBegin]="dateBeginSelected" [dateEnd]="dateEndSelected" [setInterval]="interval"></bar-chart>
   </div>
   <div class="pie-chart">
     <pie-chart [dataAssets]="'alarms'" [dateBegin]="dateBeginSelected" [dateEnd]="dateEndSelected"></pie-chart>

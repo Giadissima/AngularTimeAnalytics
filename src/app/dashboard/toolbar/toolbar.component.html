@@ -10,7 +10,7 @@
   <div class="row-flexbox interval-container">
     <mat-form-field class="date-picker">
       <mat-label>Inizio temporale - Inizio</mat-label>
-      <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker" (ngModelChange)="sendDate()">
+      <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker" (ngModelChange)="sendData()">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -25,7 +25,7 @@
     <p id="divider"><b> - </b></p>
     <mat-form-field class="date-picker">
       <mat-label>Intervallo temporale - Fine</mat-label>
-      <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker" (ngModelChange)="sendDate()">
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker" (ngModelChange)="sendData()">
       <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
@@ -40,7 +40,7 @@
     <div class="row-flexbox" id="time-interval">
       <mat-form-field class="select">
         <mat-label>Intervallo</mat-label>
-        <mat-select [(ngModel)]="intervallo">
+        <mat-select [(ngModel)]="intervallo" (ngModelChange)="sendData()">
           <mat-option *ngFor="let time of amount_time_interval;" [value]="time">
             {{time}}
           </mat-option>
