@@ -22,10 +22,22 @@ import yesterdayData from '../../../../data/yesterday.json';
 export class BarChartComponent implements OnInit, OnChanges {
   
   @Input() dataAssets: string = '';
-  @Input() dateBeginSelected!: Date;
-  @Input() dateEndSelected!: Date;
+  // TODO ci andrebbe un altra set per il container
   @Input() containerSelected: string = '';
   @Input() color: string = '#ffffff';
+  @Input() set dateBegin(value: Date) {
+    this.dateBeginSelected = value;
+    this.takeDataFromJsonByFilters();
+  }
+  
+  @Input() set dateEnd(value: Date) {
+    console.log("date end setted", value)
+    this.dateEndSelected = value;
+    this.takeDataFromJsonByFilters();
+  }
+  
+  dateBeginSelected!: Date;
+  dateEndSelected!: Date;
   barPadding = 20;
   
   colorScheme = {
@@ -37,8 +49,7 @@ export class BarChartComponent implements OnInit, OnChanges {
   // ? TOT 168 items
 
   ngOnInit() {
-    (this.dateBeginSelected = new Date(2023, 10, 1)),
-      (this.dateEndSelected = new Date(2023, 10, 1)),
+    console.log("aaaaa", this.dateBeginSelected)
       this.takeDataFromJsonByFilters();
       this.colorScheme = {
         domain:[this.color]

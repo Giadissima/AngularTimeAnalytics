@@ -6,8 +6,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  
-  onReceiveDate(date: Date){
-    console.log(date)
+  dateBeginSelected!: Date;
+  dateEndSelected!: Date;
+  onReceiveDate(date: Date[]){
+    this.dateBeginSelected = date[0];
+    this.dateEndSelected = date[1];
   }
 }

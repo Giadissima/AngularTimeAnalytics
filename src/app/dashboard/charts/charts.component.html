@@ -10,10 +10,10 @@
         <button mat-raised-button [color]="peopleButtonsColor['Container 3']" (click)="updateChartByClick($event, 'people', 'Container 3')">Container
           3</button>
       </div>
-    <!-- <bar-chart dataAssets="'people'"></bar-chart> -->
+    <bar-chart [dataAssets]="'people'" [containerSelected]="peopleButtonClicked" [color]="'#44b182'" [dateBegin]="dateBeginSelected" [dateEnd]="dateEndSelected"></bar-chart>
   </div>
   <div class="pie-chart">
-    <app-people-pie-chart></app-people-pie-chart>
+    <pie-chart [dataAssets]="'people'" [dateBegin]="dateBeginSelected" [dateEnd]="dateEndSelected"></pie-chart>
   </div>
 </div>
 <div class="charts-container">
@@ -28,9 +28,9 @@
       <button mat-raised-button [color]="alarmsButtonsColor['Container 3']" (click)="updateChartByClick($event, 'alarms', 'Container 3')">Container
         3</button>
     </div>
-    <app-alarms-bar-chart></app-alarms-bar-chart>
+    <bar-chart [dataAssets]="'alarms'" [containerSelected]="alarmsButtonClicked" [color]="'#ff0309'" [dateBegin]="dateBeginSelected" [dateEnd]="dateEndSelected"></bar-chart>
   </div>
   <div class="pie-chart">
-    <app-alarms-pie-chart></app-alarms-pie-chart>
+    <pie-chart [dataAssets]="'alarms'" [dateBegin]="dateBeginSelected" [dateEnd]="dateEndSelected"></pie-chart>
   </div>
 </div>

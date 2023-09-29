@@ -1,7 +1,6 @@
-import { AlarmsBarChartComponent } from './dashboard/charts/alarms-bar-chart/alarms-bar-chart.component';
-import { AlarmsPieChartComponent } from './dashboard/charts/alarms-pie-chart/alarms-pie-chart.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BarChartComponent } from './dashboard/charts/bar-chart/bar-chart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ChartsComponent } from './dashboard/charts/charts.component';
@@ -17,12 +16,9 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { NgModule } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { PeopleBarChartComponent } from './dashboard/charts/people-bar-chart/people-bar-chart.component';
-import { PeoplePieChartComponent } from './dashboard/charts/people-pie-chart/people-pie-chart.component';
+import { PieChartComponent } from './dashboard/charts/pie-chart/pie-chart.component';
 import { TestComponent } from './test/test.component';
 import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
-import { BarChartComponent } from './dashboard/charts/bar-chart/bar-chart.component';
-import { PieChartComponent } from './dashboard/charts/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +27,6 @@ import { PieChartComponent } from './dashboard/charts/pie-chart/pie-chart.compon
     TestComponent,
     ChartsComponent,
     ToolbarComponent,
-    AlarmsBarChartComponent,
-    PeopleBarChartComponent,
-    PeoplePieChartComponent,
-    AlarmsPieChartComponent,
     BarChartComponent,
     PieChartComponent,
   ],

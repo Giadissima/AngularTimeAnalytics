@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-charts',
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./charts.component.scss']
 })
 export class ChartsComponent {
-
+  @Input() dateBeginSelected!: Date;
+  @Input() dateEndSelected!: Date;
   peopleButtonClicked = "Tutti";
   peopleButtonsColor:  { [key: string]: string }  = {
     "Tutti": 'primary',

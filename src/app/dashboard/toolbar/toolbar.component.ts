@@ -20,7 +20,7 @@ import subDays from 'date-fns/subDays';
 })
 export class ToolbarComponent implements OnInit {
 
-  @Output() sendDateEvent = new EventEmitter<Date>();
+  @Output() sendDateEvent = new EventEmitter<Date[]>();
   // constructor(private barChartComponent: BarChartComponent) { }
   
   dateBeginDatePicker = new Date();
@@ -136,6 +136,6 @@ export class ToolbarComponent implements OnInit {
 
   sendDate(){
     console.log("event")
-    this.sendDateEvent.emit(this.dateEndDatePicker);
+    this.sendDateEvent.emit([this.dateBeginDatePicker, this.dateEndDatePicker]);
   }
 }

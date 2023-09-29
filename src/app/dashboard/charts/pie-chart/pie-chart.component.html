@@ -1,1 +1,12 @@
-<p>pie-chart works!</p>
+<div class="chart-container">
+  <!-- TODO non trovo l'opzione per togliere le freccine sotto ai label, anche cercando online non trovo niente, ho l'impressione che non ci siano -->
+  <ngx-charts-pie-chart
+    [view]="[400, 400]"
+    [scheme]="colorScheme"
+    [results]="result"
+    [labels]="true"
+    [doughnut]="true"
+    [trimLabels]="false"
+    >
+  </ngx-charts-pie-chart>
+</div>
