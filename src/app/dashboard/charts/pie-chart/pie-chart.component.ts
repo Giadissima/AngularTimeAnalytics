@@ -20,7 +20,7 @@ export class PieChartComponent {
   }
 
   @Input() set dateEnd(value: Date) {
-    console.log('date end setted', value);
+    // console.log('date end setted', value);
     this.dateEndSelected = value;
     this.takeDataFromJsonByFilters();
   }
@@ -87,7 +87,7 @@ export class PieChartComponent {
         }
       );
     });
-    console.log('date taken');
+    // console.log('date taken');
   }
 
   ngOnChanges(changes: SimpleChanges) {

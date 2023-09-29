@@ -22,8 +22,10 @@ import yesterdayData from '../../../../data/yesterday.json';
 export class BarChartComponent implements OnInit, OnChanges {
   
   @Input() dataAssets: string = '';
-  // TODO ci andrebbe un altra set per il container
-  @Input() containerSelected: string = '';
+  @Input() set setContainer(value: string) {
+    this.containerSelected = value;
+    this.takeDataFromJsonByFilters();
+  }
   @Input() color: string = '#ffffff';
   @Input() set dateBegin(value: Date) {
     this.dateBeginSelected = value;
@@ -31,11 +33,11 @@ export class BarChartComponent implements OnInit, OnChanges {
   }
   
   @Input() set dateEnd(value: Date) {
-    console.log("date end setted", value)
     this.dateEndSelected = value;
     this.takeDataFromJsonByFilters();
   }
   
+  containerSelected: string = '';
   dateBeginSelected!: Date;
   dateEndSelected!: Date;
   barPadding = 20;
@@ -46,19 +48,15 @@ export class BarChartComponent implements OnInit, OnChanges {
 
   result: any[] = [];
   // ? debugger;
-  // ? TOT 168 items
 
   ngOnInit() {
-    console.log("aaaaa", this.dateBeginSelected)
-      this.takeDataFromJsonByFilters();
       this.colorScheme = {
         domain:[this.color]
       } as Color
   }
 
   takeDataFromJsonByFilters() {
-    const dataKeyToSearch =
-      this.dataAssets == 'alarms' ? 'number_of_alarms' : 'number_of_persons';
+    // debugger;
     if (
       !this.dateBeginSelected ||
       !this.dateEndSelected ||
@@ -68,33 +66,36 @@ export class BarChartComponent implements OnInit, OnChanges {
       return;
     }
 
+    const diffInDays = differenceInDays(this.dateEndSelected, this.dateBeginSelected)
     let data: any[] = [];
-    // TODO aggiungere il filters.container
-    switch (differenceInDays(this.dateEndSelected, this.dateBeginSelected)) {
       // caso caricamento dati giornalieri
-      case 0:
-        let day = this.dateBeginSelected.getDay();
-        if (day % 2 == 0) {
-          // carica i dati di "oggi"
-          data = dayData;
-        } else {
-          // carica i dati di "ieri"
-          data = yesterdayData;
-        }
-        break;
+    if(diffInDays == 0){
+      let day = this.dateBeginSelected.getDay();
+      if (day % 2 == 0) {
+        // carica i dati di "oggi"
+        console.log("day data")
+        data = dayData;
+      } else {
+        // carica i dati di "ieri"
+        console.log("yesterday data")
+        data = yesterdayData;
+      }
+    } else if(diffInDays == 7 || diffInDays == 6){
       // caso caricamento dati settimanali
-      case 6:
+        console.log("week data")
         data = weekData;
-        break;
-      case 29 || 30 || 27:
-        data = monthData;
-        break;
+    } else {
+      console.log("dati mensili", diffInDays)
+      data = monthData;
     }
+    this.result = []
+    console.log("DATA", data)
     data.forEach((container) => {
+      console.log("container", container)
       if (
         container &&
         (this.containerSelected == 'Tutti' ||
-          this.containerSelected == container)
+          this.containerSelected == container.name)
       ) {
         container.series.forEach(
           (item: { people: number; name: string; alarms: number }) => {
@@ -112,7 +113,7 @@ export class BarChartComponent implements OnInit, OnChanges {
         );
       }
     });
-    console.log("date taken");
+    console.log("date taken", this.result, this.dateBeginSelected, this.dateEndSelected, this.containerSelected);
   }
 
   ngOnChanges(changes: SimpleChanges) {

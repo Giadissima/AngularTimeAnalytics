@@ -3,25 +3,18 @@ import {
   EventEmitter,
   OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 
-import { compareAsc } from 'date-fns';
 import subDays from 'date-fns/subDays';
 
-// import { BarChartComponent } from '../charts/bar-chart/bar-chart.component'
-
-
-
 @Component({
-  selector: 'toolbar',
+  selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
 
   @Output() sendDateEvent = new EventEmitter<Date[]>();
-  // constructor(private barChartComponent: BarChartComponent) { }
   
   dateBeginDatePicker = new Date();
   dateEndDatePicker = new Date();
@@ -67,11 +60,10 @@ export class ToolbarComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.dateBeginDatePicker = new Date(2023, 7, 1);
-    this.dateEndDatePicker = new Date(2023, 7, 1);
     this.selectBeginTime = '12:00';
     this.selectEndTime = '22:00';
     this.intervallo = '1 ora';
+    this.sendDate()
   }
 
   amount_time_interval = ['1 ora', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
@@ -80,7 +72,6 @@ export class ToolbarComponent implements OnInit {
 
 //TODO risolvere problema dati inconsistenti 
   updateChartByClick(event: Event, nameButtonClicked: string) {
-    console.log('button clicked');
     event.stopPropagation;
     this.buttonClicked = nameButtonClicked;
     Object.keys(this.buttonsColor).forEach((key) => {
@@ -125,17 +116,13 @@ export class ToolbarComponent implements OnInit {
     this.sendDate();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     // se la data è corretta, chiama un aggiornamento dati
-    let fromDate = this.dateBeginDatePicker;
-    let toDate = this.dateEndDatePicker;
-    fromDate.setHours(parseInt(this.selectBeginTime.split(':')[0],10), 0);
-    toDate.setHours(parseInt(this.selectEndTime.split(':')[0],10), 0);
-    // if(compareAsc(fromDate, toDate)<=0) this.barChartComponent.takeDataFromJsonByFilters({fromDate, toDate});
+    this.dateBeginDatePicker.setHours(parseInt(this.selectBeginTime.split(':')[0],10), 0);
+    this.dateEndDatePicker.setHours(parseInt(this.selectEndTime.split(':')[0],10), 0);
   }
 
   sendDate(){
-    console.log("event")
     this.sendDateEvent.emit([this.dateBeginDatePicker, this.dateEndDatePicker]);
   }
 }

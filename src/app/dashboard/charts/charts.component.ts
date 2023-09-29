@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./charts.component.scss']
 })
 export class ChartsComponent {
-  @Input() dateBeginSelected!: Date;
-  @Input() dateEndSelected!: Date;
+  dateBeginSelected!: Date;
+  dateEndSelected!: Date;
   peopleButtonClicked = "Tutti";
   peopleButtonsColor:  { [key: string]: string }  = {
     "Tutti": 'primary',
@@ -25,7 +25,6 @@ export class ChartsComponent {
   };
   
   updateChartByClick(event: Event, type: string, nameButtonClicked: string){
-    console.log("button clicked");
     event.stopPropagation;
 
     if(type == 'alarms'){
@@ -42,5 +41,12 @@ export class ChartsComponent {
       this.peopleButtonsColor[nameButtonClicked] = 'primary';
     }
 
+  }
+
+  // Todo data di default da passare
+  setFilter(date:Date[]){
+    // console.log("data: ", date);
+    this.dateBeginSelected = date[0];
+    this.dateEndSelected = date[1];
   }
 }

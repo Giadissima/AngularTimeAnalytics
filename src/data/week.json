@@ -3,119 +3,119 @@
 		"name": "Container 1",
 		"series": [
 			{
-				"date": "2023-09-18",
-				"number_of_persons": 1,
-				"number_of_alarms": 0
+				"name": "2023-09-18",
+				"people": 1,
+				"alarms": 0
 			},
 			{
-				"date": "2023-09-19",
-				"number_of_persons": 0,
-				"number_of_alarms": 0
+				"name": "2023-09-19",
+				"people": 0,
+				"alarms": 0
 			},
 			{
-				"date": "2023-09-20",
-				"number_of_persons": 2,
-				"number_of_alarms": 2
+				"name": "2023-09-20",
+				"people": 2,
+				"alarms": 2
 			},
 			{
-				"date": "2023-09-21",
-				"number_of_persons": 3,
-				"number_of_alarms": 2
+				"name": "2023-09-21",
+				"people": 3,
+				"alarms": 2
 			},
 			{
-				"date": "2023-09-22",
-				"number_of_persons": 12,
-				"number_of_alarms": 7
+				"name": "2023-09-22",
+				"people": 12,
+				"alarms": 7
 			},
 			{
-				"date": "2023-09-23",
-				"number_of_persons": 5,
-				"number_of_alarms": 6
+				"name": "2023-09-23",
+				"people": 5,
+				"alarms": 6
 			},
 			{
-				"date": "2023-09-24",
-				"number_of_persons": 3,
-				"number_of_alarms": 8
+				"name": "2023-09-24",
+				"people": 3,
+				"alarms": 8
 			}
 		]
 	},
 	{
-		"container_id": 2,
+		"name": "Container 2",
 		"series": [
 			{
-				"date": "2023-09-18",
-				"number_of_persons": 4,
-				"number_of_alarms": 1
+				"name": "2023-09-18",
+				"people": 4,
+				"alarms": 1
 			},
 			{
-				"date": "2023-09-19",
-				"number_of_persons": 1,
-				"number_of_alarms": 2
+				"name": "2023-09-19",
+				"people": 1,
+				"alarms": 2
 			},
 			{
-				"date": "2023-09-20",
-				"number_of_persons": 3,
-				"number_of_alarms": 1
+				"name": "2023-09-20",
+				"people": 3,
+				"alarms": 1
 			},
 			{
-				"date": "2023-09-21",
-				"number_of_persons": 2,
-				"number_of_alarms": 3
+				"name": "2023-09-21",
+				"people": 2,
+				"alarms": 3
 			},
 			{
-				"date": "2023-09-22",
-				"number_of_persons": 6,
-				"number_of_alarms": 2
+				"name": "2023-09-22",
+				"people": 6,
+				"alarms": 2
 			},
 			{
-				"date": "2023-09-23",
-				"number_of_persons": 4,
-				"number_of_alarms": 5
+				"name": "2023-09-23",
+				"people": 4,
+				"alarms": 5
 			},
 			{
-				"date": "2023-09-24",
-				"number_of_persons": 5,
-				"number_of_alarms": 3
+				"name": "2023-09-24",
+				"people": 5,
+				"alarms": 3
 			}
 		]
 	},
 	{
-		"container_id": 3,
+		"name": "Container 3",
 		"series": [
 			{
-				"date": "2023-09-18",
-				"number_of_persons": 2,
-				"number_of_alarms": 3
+				"name": "2023-09-18",
+				"people": 2,
+				"alarms": 3
 			},
 			{
-				"date": "2023-09-19",
-				"number_of_persons": 4,
-				"number_of_alarms": 1
+				"name": "2023-09-19",
+				"people": 4,
+				"alarms": 1
 			},
 			{
-				"date": "2023-09-20",
-				"number_of_persons": 3,
-				"number_of_alarms": 2
+				"name": "2023-09-20",
+				"people": 3,
+				"alarms": 2
 			},
 			{
-				"date": "2023-09-21",
-				"number_of_persons": 1,
-				"number_of_alarms": 4
+				"name": "2023-09-21",
+				"people": 1,
+				"alarms": 4
 			},
 			{
-				"date": "2023-09-22",
-				"number_of_persons": 7,
-				"number_of_alarms": 1
+				"name": "2023-09-22",
+				"people": 7,
+				"alarms": 1
 			},
 			{
-				"date": "2023-09-23",
-				"number_of_persons": 5,
-				"number_of_alarms": 2
+				"name": "2023-09-23",
+				"people": 5,
+				"alarms": 2
 			},
 			{
-				"date": "2023-09-24",
-				"number_of_persons": 6,
-				"number_of_alarms": 3
+				"name": "2023-09-24",
+				"people": 6,
+				"alarms": 3
 			}
 		]
 	}
