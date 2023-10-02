@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { SetFilterParameters } from 'src/app/models/chart.dto';
+
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
@@ -44,11 +46,9 @@ export class ChartsComponent {
 
   }
 
-  // TODO aggiungerci un interfaccia e magari passarlo come obj
-  setFilter(data:[Date, Date, string]){
-    // console.log("data: ", date);
-    this.dateBeginSelected = data[0];
-    this.dateEndSelected = data[1];
-    this.interval = data[2];
+  setDatesAndInterval(data: SetFilterParameters){
+    this.dateBeginSelected = data["dateBegin"];
+    this.dateEndSelected = data["dateEnd"];
+    this.interval = data["interval"];
   }
 }

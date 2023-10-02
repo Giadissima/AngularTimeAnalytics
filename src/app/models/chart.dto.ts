@@ -1,7 +1,7 @@
-export interface ChartFilter{
-  fromDate: Date, 
-  toDate: Date,
-  container?: string
+export interface SetFilterParameters{
+  dateBegin: Date,
+  dateEnd: Date,
+  interval: string 
 }
 
 export interface DataChart{

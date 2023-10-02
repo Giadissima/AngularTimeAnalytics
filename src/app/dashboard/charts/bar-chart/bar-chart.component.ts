@@ -1,4 +1,3 @@
-import { ChartFilter, DataChart } from 'src/app/models/chart.dto';
 import {
   Component,
   Input,
@@ -9,32 +8,37 @@ import {
 import { compareAsc, differenceInDays } from 'date-fns';
 
 import { Color } from '@swimlane/ngx-charts';
-import dayData from '../../../../data/today.json';
-import monthData from '../../../../data/month.json';
-import weekData from '../../../../data/week.json';
-import yesterdayData from '../../../../data/yesterday.json';
+import { DataChart } from 'src/app/models/chart.dto';
+import dayData from '../../../../data/bar_chart/today.json';
+import lastHourData from '../../../../data/bar_chart/last_hour.json';
+import monthData from '../../../../data/bar_chart/month.json';
+import weekData from '../../../../data/bar_chart/week.json';
+import yesterdayData from '../../../../data/bar_chart/yesterday.json';
 
 @Component({
   selector: 'bar-chart',
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss'],
 })
-export class BarChartComponent implements OnInit, OnChanges {
-  
+export class BarChartComponent implements OnInit {
   @Input() dataAssets: string = '';
+  @Input() color: string = '#ffffff';
+
+  /*
+  ? The graph is updated every time a setter connected to an input is updated, 
+  ? i.e. when a piece of data necessary to determine the graph to display is changed
+  */
   @Input() set setContainer(value: string) {
     this.containerSelected = value;
     this.takeDataFromJsonByFilters();
   }
 
-  // TODO risolvere errore intervallo
-  // TODO aggiungere ultima ora
   @Input() set setInterval(value: string) {
-    console.log("cambio intervallo", value)
+    // console.log('cambio intervallo', value);
     this.interval = value;
     this.takeDataFromJsonByFilters();
   }
-  @Input() color: string = '#ffffff';
+
   @Input() set dateBegin(value: Date) {
     this.dateBeginSelected = value;
     this.takeDataFromJsonByFilters();
@@ -44,64 +48,72 @@ export class BarChartComponent implements OnInit, OnChanges {
     this.dateEndSelected = value;
     this.takeDataFromJsonByFilters();
   }
-  
-  interval: string = '2 ora';
+
+  interval: string = '1 ora';
   containerSelected: string = '';
   dateBeginSelected!: Date;
   dateEndSelected!: Date;
   barPadding = 20;
-  
-  colorScheme = {
-    domain:[this.color]
-  } as Color
+  result: DataChart[] = [];
 
-  result: any[] = [];
-  // ? debugger;
+  colorScheme = {
+    domain: [this.color],
+  } as Color;
 
   ngOnInit() {
-      this.colorScheme = {
-        domain:[this.color]
-      } as Color
+    this.colorScheme = {
+      domain: [this.color],
+    } as Color;
   }
 
+  /**
+   * takeDataFromJsonByFilters takes care of taking dummy data from JSON files depending on the following data 
+   * specified by GUI:
+   *  - initial date.
+   *  - final date.
+   *  - name of the container. selected.
+   *  - interval.
+   *  If there is unspecified or inconsistent data, the data update fails and the program waits for it to be specified
+   */
   takeDataFromJsonByFilters() {
-    let int:number = Number(this.interval[0])
-    if (
-      !this.dateBeginSelected ||
-      !this.dateEndSelected ||
-      compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0 ||
-      this.containerSelected === ''
-    ) {
+    let interval: number = Number(this.interval[0]);
+    if ( !this.dateBeginSelected || !this.dateEndSelected || compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0 || this.containerSelected === '')
       return;
-    }
 
-    const diffInDays = differenceInDays(this.dateEndSelected, this.dateBeginSelected)
+    // Check which dummy file it should take
+    const diffInDays = differenceInDays(
+      this.dateEndSelected,
+      this.dateBeginSelected
+    );
     let data: any[] = [];
-      // caso caricamento dati giornalieri
-    if(diffInDays == 0){
+    // case of daily data loading
+    if (diffInDays == 0) {
       let day = this.dateBeginSelected.getDay();
-      if (day % 2 == 0) {
-        // carica i dati di "oggi"
-        // console.log("day data")
-        data = dayData;
+      if (
+        this.dateEndSelected.getHours() - this.dateBeginSelected.getHours() ==
+        1
+      ) {
+        data = lastHourData;
       } else {
-        // carica i dati di "ieri"
-        // console.log("yesterday data")
-        data = yesterdayData;
+        if (day % 2 == 0) {
+          // ? load "today" data
+          data = dayData;
+        } else {
+          // ? load data from "yesterday"
+          data = yesterdayData;
+        }
       }
-    } else if(diffInDays == 7 || diffInDays == 6){
-      // caso caricamento dati settimanali
-        // console.log("week data")
-        data = weekData;
+    } else if (diffInDays == 7 || diffInDays == 6 || diffInDays == 8) {
+      // ? weekly data loading case
+      data = weekData;
     } else {
-      // console.log("dati mensili", diffInDays)
       data = monthData;
     }
-    this.result = []
-    data.forEach((container) => {
-// TODO non aggiorna quando viene cambiato l'orario
 
-      console.log("container", container)
+    // ? it filters the data from the json it needs to take and formats the array so it can be displayed correctly
+    this.result = [];
+    let arr: DataChart[] = [];
+    data.forEach((container) => {
       if (
         container &&
         (this.containerSelected == 'Tutti' ||
@@ -109,15 +121,17 @@ export class BarChartComponent implements OnInit, OnChanges {
       ) {
         container.series.forEach(
           (item: { people: number; name: string; alarms: number }) => {
-            let founded = this.result.find((el) => el.name === item.name);
-            if(item.name[12]){
-              if(Number(item.name[12]) % int != 0) { return;}
+            let founded = arr.find((el) => el.name === item.name);
+            if (item.name[12] && interval != 1) {
+              if (this.interval && Number(item.name[12]) % interval != 0) {
+                return;
+              }
             }
             if (founded !== undefined) {
               founded.value +=
                 this.dataAssets == 'people' ? item.people : item.alarms;
             } else {
-              this.result.push({
+              arr.push({
                 value: this.dataAssets == 'people' ? item.people : item.alarms,
                 name: item.name,
               });
@@ -126,9 +140,8 @@ export class BarChartComponent implements OnInit, OnChanges {
         );
       }
     });
-  }
 
-  ngOnChanges(changes: SimpleChanges) {
-    // this.takeDataFromJsonByFilters();
+    // ? display the result.
+    this.result = arr;
   }
 }

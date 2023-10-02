@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent {
-  date1 = new Date();
-  date2 = new Date();
 }

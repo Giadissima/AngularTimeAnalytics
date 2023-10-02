@@ -1,6 +1,9 @@
 <div class="main-container">
   <button class="back-button" mat-button><mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Indietro</button>
-  <app-toolbar (sendDateEvent)="chart.setFilter($event)"></app-toolbar>
+  
+  <!-- ? Sending data through brothers -->
+  <app-toolbar (sendDataToChartsEvent)="chart.setDatesAndInterval($event)"></app-toolbar>
   <app-charts #chart></app-charts>
+
   <img id="logo-aida" src="assets/logo-aida.png" alt="">
 </div>

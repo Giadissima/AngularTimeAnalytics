@@ -10,13 +10,13 @@
   <div class="row-flexbox interval-container">
     <mat-form-field class="date-picker">
       <mat-label>Inizio temporale - Inizio</mat-label>
-      <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker" (ngModelChange)="sendData()">
+      <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker" (ngModelChange)="sendDataToCharts()">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="select">
       <mat-label>Ora</mat-label>
-      <mat-select [(ngModel)]="selectBeginTime">
+      <mat-select [(ngModel)]="selectBeginTime" (ngModelChange)="sendDataToCharts()">
         <mat-option *ngFor="let time of time_interval;" [value]="time">
           {{time}}
         </mat-option>
@@ -25,13 +25,13 @@
     <p id="divider"><b> - </b></p>
     <mat-form-field class="date-picker">
       <mat-label>Intervallo temporale - Fine</mat-label>
-      <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker" (ngModelChange)="sendData()">
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker" (ngModelChange)="sendDataToCharts()">
       <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="select">
       <mat-label>Ora: </mat-label>
-      <mat-select [(ngModel)]="selectEndTime">
+      <mat-select [(ngModel)]="selectEndTime" (ngModelChange)="sendDataToCharts()">
         <mat-option *ngFor="let time of time_interval;" [value]="time">
           {{time}}
         </mat-option>
@@ -40,7 +40,7 @@
     <div class="row-flexbox" id="time-interval">
       <mat-form-field class="select">
         <mat-label>Intervallo</mat-label>
-        <mat-select [(ngModel)]="intervallo" (ngModelChange)="sendData()">
+        <mat-select [(ngModel)]="intervallo" (ngModelChange)="sendDataToCharts()">
           <mat-option *ngFor="let time of amount_time_interval;" [value]="time">
             {{time}}
           </mat-option>

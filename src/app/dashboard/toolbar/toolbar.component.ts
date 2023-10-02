@@ -5,6 +5,8 @@ import {
   Output,
 } from '@angular/core';
 
+import { SetFilterParameters } from 'src/app/models/chart.dto';
+import { setHours } from 'date-fns';
 import subDays from 'date-fns/subDays';
 
 @Component({
@@ -14,7 +16,7 @@ import subDays from 'date-fns/subDays';
 })
 export class ToolbarComponent implements OnInit {
 
-  @Output() sendDateEvent = new EventEmitter<[Date, Date, string]>();
+  @Output() sendDataToChartsEvent = new EventEmitter<SetFilterParameters>();
   
   dateBeginDatePicker = new Date();
   dateEndDatePicker = new Date();
@@ -63,14 +65,13 @@ export class ToolbarComponent implements OnInit {
     this.selectBeginTime = '12:00';
     this.selectEndTime = '22:00';
     this.intervallo = '1 ora';
-    this.sendData()
+    this.sendDataToCharts()
   }
 
   amount_time_interval = ['1 ora', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
 
   toggleGroup: boolean[] = [false, false, true, false, false];
 
-//TODO risolvere problema dati inconsistenti 
   updateChartByClick(event: Event, nameButtonClicked: string) {
     event.stopPropagation;
     this.buttonClicked = nameButtonClicked;
@@ -83,46 +84,42 @@ export class ToolbarComponent implements OnInit {
         this.dateBeginDatePicker = new Date();
         this.dateEndDatePicker = this.dateBeginDatePicker;
         this.selectBeginTime = '00:00';
-        this.selectEndTime = '23:59';
+        this.selectEndTime = '23:00';
         break;
       case 'Ieri':
         this.dateBeginDatePicker = subDays(new Date(), 1);
         this.dateEndDatePicker = this.dateBeginDatePicker;
         this.selectBeginTime = '00:00';
-        this.selectEndTime = '23:59';
+        this.selectEndTime = '23:00';
         break;
       case 'Ultima ora':
         let date = new Date();
         this.dateBeginDatePicker = date;
         this.dateEndDatePicker = date;
-        this.selectBeginTime = `${date
-          .getHours()
-          .toString()
-          .padStart(2, '0')}:00`;
-        this.selectEndTime = this.selectBeginTime;
+        this.selectBeginTime = "13:00";
+        this.selectEndTime = "14:00";
         break;
       case 'Ultima settimana':
         this.dateBeginDatePicker = subDays(new Date(), 7);
         this.dateEndDatePicker = new Date();
         this.selectBeginTime = '00:00';
-        this.selectEndTime = '23:59';
+        this.selectEndTime = '23:00';
         break;
       case 'Ultimo mese':
         this.dateBeginDatePicker = subDays(new Date(), 30);
         this.dateEndDatePicker = new Date();
         this.selectBeginTime = '00:00';
-        this.selectEndTime = '23:59';
+        this.selectEndTime = '23:00';
     }
-    this.sendData();
+    this.sendDataToCharts();
   }
-
-  ngOnChanges() {
-    // se la data è corretta, chiama un aggiornamento dati
-    this.dateBeginDatePicker.setHours(parseInt(this.selectBeginTime.split(':')[0],10), 0);
-    this.dateEndDatePicker.setHours(parseInt(this.selectEndTime.split(':')[0],10), 0);
-  }
-
-  sendData(){
-    this.sendDateEvent.emit([this.dateBeginDatePicker, this.dateEndDatePicker, this.intervallo]);
+  
+  /**
+   * set hours and time and triggers the event sendDataToChartsEvent
+   */
+  sendDataToCharts(){
+    this.dateBeginDatePicker = setHours(this.dateBeginDatePicker, parseInt(this.selectBeginTime.split(":")[0]));
+    this.dateEndDatePicker = setHours(this.dateEndDatePicker, parseInt(this.selectEndTime.split(":")[0]));
+    this.sendDataToChartsEvent.emit({dateBegin: this.dateBeginDatePicker, dateEnd: this.dateEndDatePicker, interval: this.intervallo} as SetFilterParameters);
   }
 }

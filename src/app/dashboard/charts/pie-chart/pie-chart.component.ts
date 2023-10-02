@@ -2,10 +2,11 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 import { compareAsc, differenceInDays } from 'date-fns';
 
 import { Color } from '@swimlane/ngx-charts';
-import dayData from '../../../../data/today.json';
-import monthData from '../../../../data/month.json';
-import weekData from '../../../../data/week.json';
-import yesterdayData from '../../../../data/yesterday.json';
+import dayData from '../../../../data/pie-chart/today.json';
+import lastHourData from '../../../../data/pie-chart/last_hour.json';
+import monthData from '../../../../data/pie-chart/month.json';
+import weekData from '../../../../data/pie-chart/week.json';
+import yesterdayData from '../../../../data/pie-chart/yesterday.json';
 
 @Component({
   selector: 'pie-chart',
@@ -20,14 +21,12 @@ export class PieChartComponent {
   }
 
   @Input() set dateEnd(value: Date) {
-    // console.log('date end setted', value);
     this.dateEndSelected = value;
     this.takeDataFromJsonByFilters();
   }
 
   dateBeginSelected!: Date;
   dateEndSelected!: Date;
-  barPadding = 20;
 
   colorScheme = {
     domain: ['#a5a1f5', '#68c4e1', '#feb72b'],
@@ -36,61 +35,51 @@ export class PieChartComponent {
   result: any[] = [];
   // ? debugger;
 
-  ngOnInit() {
-    this.takeDataFromJsonByFilters();
-  }
-
   takeDataFromJsonByFilters() {
-    if (
-      !this.dateBeginSelected ||
-      !this.dateEndSelected ||
-      compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0
-    ) {
+    // ? if data are not defined yet
+    if ( !this.dateBeginSelected || !this.dateEndSelected || compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0 ) 
       return;
-    }
 
+    const diffInDays = differenceInDays(
+      this.dateEndSelected,
+      this.dateBeginSelected
+    );
     let data: any[] = [];
-    // TODO aggiungere il filters.container
-    switch (differenceInDays(this.dateEndSelected, this.dateBeginSelected)) {
-      // caso caricamento dati giornalieri
-      case 0:
-        let day = this.dateBeginSelected.getDay();
+    // caso caricamento dati giornalieri
+    if (diffInDays == 0) {
+      let day = this.dateBeginSelected.getDay();
+      if (
+        this.dateEndSelected.getHours() - this.dateBeginSelected.getHours() ==
+        1
+      ) {
+        data = lastHourData;
+      }else {
         if (day % 2 == 0) {
-          // carica i dati di "oggi"
+          // ? carica i dati di "oggi"
           data = dayData;
         } else {
-          // carica i dati di "ieri"
+          // ? carica i dati di "ieri"
           data = yesterdayData;
         }
-        break;
-      // caso caricamento dati settimanali
-      case 6:
-        data = weekData;
-        break;
-      case 29 || 30 || 27:
-        data = monthData;
-        break;
+      }
+    } else if (diffInDays == 7 || diffInDays == 6 || diffInDays == 8) {
+      // ? caso caricamento dati settimanali
+      data = weekData;
+    } else {
+      data = monthData;
     }
-    data.forEach((container) => {
-      container.series.forEach(
-        (item: { people: number; name: string; alarms: number }) => {
-          let founded = this.result.find((el) => el.name === item.name);
-          if (founded !== undefined) {
-            founded.value +=
-              this.dataAssets == 'people' ? item.people : item.alarms;
-          } else {
-            this.result.push({
-              value: this.dataAssets == 'people' ? item.people : item.alarms,
-              name: item.name,
-            });
-          }
-        }
-      );
-    });
-    // console.log('date taken');
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    // this.takeDataFromJsonByFilters();
+    this.result = [];
+    data.forEach((item: { people: number; name: string; alarms: number }) => {
+      let founded = this.result.find((el) => el.name === item.name);
+      if (founded !== undefined) {
+        founded.value +=
+          this.dataAssets == 'people' ? item.people : item.alarms;
+      } else {
+        this.result.push({
+          value: this.dataAssets == 'people' ? item.people : item.alarms,
+          name: item.name,
+        });
+      }
+  });
   }
 }

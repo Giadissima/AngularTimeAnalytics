@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Container 1",
+    "people": 30,
+    "alarms": 2
+  },
+  {
+    "name": "Container 2",
+    "people": 20,
+    "alarms": 4
+  },
+  {
+    "name": "Container 3",
+    "people": 17,
+    "alarms": 0
+  } 
+]
