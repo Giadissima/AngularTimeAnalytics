@@ -34,7 +34,6 @@ export class BarChartComponent implements OnInit {
   }
 
   @Input() set setInterval(value: string) {
-    // console.log('cambio intervallo', value);
     this.interval = value;
     this.takeDataFromJsonByFilters();
   }
@@ -49,7 +48,7 @@ export class BarChartComponent implements OnInit {
     this.takeDataFromJsonByFilters();
   }
 
-  interval: string = '1 ora';
+  interval!: string;
   containerSelected: string = '';
   dateBeginSelected!: Date;
   dateEndSelected!: Date;
@@ -76,11 +75,11 @@ export class BarChartComponent implements OnInit {
    *  If there is unspecified or inconsistent data, the data update fails and the program waits for it to be specified
    */
   takeDataFromJsonByFilters() {
-    let interval: number = Number(this.interval[0]);
     // ? If there is unspecified or inconsistent data, the data update fails
-    if ( !this.dateBeginSelected || !this.dateEndSelected || compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0 || this.containerSelected === '')
-      return;
-
+    if ( !this.dateBeginSelected || !this.dateEndSelected || compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0 || this.containerSelected === '' || !this.interval)
+    return;
+  
+    let interval: number = Number(this.interval[0]);
     // Check which dummy file it should take
     const diffInDays = differenceInDays(
       this.dateEndSelected,
@@ -113,13 +112,12 @@ export class BarChartComponent implements OnInit {
 
     // ? it filters the data from the json it needs to take and formats the array so it can be displayed correctly
     this.result = [];
-    let arr: DataChart[] = [];
     data.forEach((container) => {
       // ? select data by container selected (by the default it will shows all containers' data)
       if (container && (this.containerSelected == 'Tutti' || this.containerSelected == container.name)) {
         container.series.forEach(
           (item: JsonDataModel) => {
-            let founded = arr.find((el) => el.name === item.name);
+            let founded = this.result.find((el) => el.name === item.name);
             /* if time is set, then select the date with defined interval (default '1 hour'). 
              If the date not corresponding to the defined interval, it will ignore its. */
             if (item.name[12] && interval != 1 && (this.interval && Number(item.name[12]) % interval != 0))
@@ -127,7 +125,7 @@ export class BarChartComponent implements OnInit {
             if (founded !== undefined)
               founded.value += this.dataAssets == 'people' ? item.people : item.alarms;
             else 
-              arr.push({
+              this.result.push({
                 value: this.dataAssets == 'people' ? item.people : item.alarms,
                 name: item.name,
               });
@@ -135,8 +133,5 @@ export class BarChartComponent implements OnInit {
         );
       }
     });
-    // ? display the result.
-    this.result = arr;
-    console.log(this.result)
-  }// TODO sembra che i datepicker e l'intervallo non siano più collegati con il bar chart
+  }
 }

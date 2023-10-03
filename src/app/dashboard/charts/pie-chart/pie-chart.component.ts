@@ -1,7 +1,8 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { compareAsc, differenceInDays } from 'date-fns';
 
 import { Color } from '@swimlane/ngx-charts';
+import { JsonDataModel } from 'src/app/models/chart.dto';
 import dayData from '../../../../data/pie-chart/today.json';
 import lastHourData from '../../../../data/pie-chart/last_hour.json';
 import monthData from '../../../../data/pie-chart/month.json';
@@ -37,7 +38,7 @@ export class PieChartComponent {
 
   takeDataFromJsonByFilters() {
     // ? if data are not defined yet
-    if ( !this.dateBeginSelected || !this.dateEndSelected || compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0 ) 
+    if (!this.dateBeginSelected || !this.dateEndSelected || compareAsc(this.dateBeginSelected, this.dateEndSelected) > 0) 
       return;
 
     const diffInDays = differenceInDays(
@@ -69,7 +70,7 @@ export class PieChartComponent {
       data = monthData;
     }
     this.result = [];
-    data.forEach((item: { people: number; name: string; alarms: number }) => {
+    data.forEach((item: JsonDataModel) => {
       let founded = this.result.find((el) => el.name === item.name);
       if (founded !== undefined) {
         founded.value +=
