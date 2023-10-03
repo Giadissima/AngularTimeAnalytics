@@ -1,9 +1,7 @@
 import {
   Component,
   Input,
-  OnChanges,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
 import { DataChart, JsonDataModel } from 'src/app/models/chart.dto';
 import { compareAsc, differenceInDays } from 'date-fns';
@@ -21,13 +19,13 @@ import yesterdayData from '../../../../data/bar_chart/yesterday.json';
   styleUrls: ['./bar-chart.component.scss'],
 })
 export class BarChartComponent implements OnInit {
-  @Input() dataAssets: string = '';
-  @Input() color: string = '#ffffff';
-
   /*
   ? The graph is updated every time a setter connected to an input is updated, 
   ? i.e. when a piece of data necessary to determine the graph to display is changed
   */
+  @Input() dataAssets: string = '';
+  @Input() color: string = '#ffffff';
+
   @Input() set setContainer(value: string) {
     this.containerSelected = value;
     this.takeDataFromJsonByFilters();
@@ -70,7 +68,7 @@ export class BarChartComponent implements OnInit {
    * specified by GUI:
    *  - initial date.
    *  - final date.
-   *  - name of the container. selected.
+   *  - name of the container selected.
    *  - interval.
    *  If there is unspecified or inconsistent data, the data update fails and the program waits for it to be specified
    */
