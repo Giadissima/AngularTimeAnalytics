@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Container 1",
+        "series": [
+            {
+                "name": "18/09/2023",
+                "people": 1,
+                "alarms": 0
+            },
+            {
+                "name": "19/09/2023",
+                "people": 0,
+                "alarms": 0
+            },
+            {
+                "name": "20/09/2023",
+                "people": 2,
+                "alarms": 2
+            },
+            {
+                "name": "21/09/2023",
+                "people": 3,
+                "alarms": 2
+            },
+            {
+                "name": "22/09/2023",
+                "people": 12,
+                "alarms": 7
+            },
+            {
+                "name": "23/09/2023",
+                "people": 5,
+                "alarms": 6
+            },
+            {
+                "name": "24/09/2023",
+                "people": 3,
+                "alarms": 8
+            }
+        ]
+    },
+    {
+        "name": "Container 2",
+        "series": [
+            {
+                "name": "18/09/2023",
+                "people": 4,
+                "alarms": 1
+            },
+            {
+                "name": "19/09/2023",
+                "people": 1,
+                "alarms": 2
+            },
+            {
+                "name": "20/09/2023",
+                "people": 3,
+                "alarms": 1
+            },
+            {
+                "name": "21/09/2023",
+                "people": 2,
+                "alarms": 3
+            },
+            {
+                "name": "22/09/2023",
+                "people": 6,
+                "alarms": 2
+            },
+            {
+                "name": "23/09/2023",
+                "people": 4,
+                "alarms": 5
+            },
+            {
+                "name": "24/09/2023",
+                "people": 5,
+                "alarms": 3
+            }
+        ]
+    },
+    {
+        "name": "Container 3",
+        "series": [
+            {
+                "name": "18/09/2023",
+                "people": 2,
+                "alarms": 3
+            },
+            {
+                "name": "19/09/2023",
+                "people": 4,
+                "alarms": 1
+            },
+            {
+                "name": "20/09/2023",
+                "people": 3,
+                "alarms": 2
+            },
+            {
+                "name": "21/09/2023",
+                "people": 1,
+                "alarms": 4
+            },
+            {
+                "name": "22/09/2023",
+                "people": 7,
+                "alarms": 1
+            },
+            {
+                "name": "23/09/2023",
+                "people": 5,
+                "alarms": 2
+            },
+            {
+                "name": "24/09/2023",
+                "people": 6,
+                "alarms": 3
+            }
+        ]
+    }
+]

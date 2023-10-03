@@ -4,19 +4,18 @@
   </div>
   <div class="buttons-container">
     <div class="buttons row-flexbox">
-      <div class="row-flexbox">
-        <!-- TODO mettere le img dentro a un div -->
-        <div class="img-container img-to-space"><img src="assets/camera-dimmed.png" alt=""></div> 
-        <div class="img-container"><img src="assets/container-dimmed.png" alt=""></div>
+      <div class="row-flexbox">      
+        <button mat-raised-button disabled class="disa"><mat-icon>videocam</mat-icon></button>
+        <button mat-raised-button disabled><mat-icon>check_box_outline_blank</mat-icon></button>
       </div>
       <div class="row-flexbox">
-        <div class="img-container" id="zoom-in"><img src="assets/zoom-in-dimmed.png" alt=""></div>
-        <div class="img-container img-to-space" id="zoom-out"><img src="assets/zoom-out-dimmed.png" alt=""></div>
-        <div class="img-container"><img src="assets/zoom-out-map-dimmed.png" alt=""></div>
+        <button mat-raised-button disabled><mat-icon>zoom_in</mat-icon></button>
+        <button mat-raised-button disabled><mat-icon>zoom_out</mat-icon></button>
+        <button mat-raised-button disabled><mat-icon>zoom_out_map</mat-icon></button>
       </div>
       <div class="row-flexbox">
-        <div class="img-container img-to-space"><img src="assets/settings.png" alt=""></div>
-        <div class="img-container"><img src="assets/statistiche-on.png" alt=""></div>
+        <button mat-raised-button><mat-icon>settings</mat-icon></button>
+        <button mat-raised-button color="primary" id="statistic-button"><mat-icon>bar_chart</mat-icon></button>
       </div>
     </div>
   </div>

@@ -1,8 +1,9 @@
 <div class="main-container">
-  <div class="row-flexbox arrow-box">
-    <img src="assets/arrow_back.png" alt=""><a href="" class="back-button">Indietro</a>
-  </div>
-  <app-toolbar></app-toolbar>
-  <app-charts></app-charts>
+  <button class="back-button" mat-button><mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Indietro</button>
+  
+  <!-- ? Sending data through brothers -->
+  <app-toolbar (sendDataToChartsEvent)="chart.setDatesAndInterval($event)"></app-toolbar>
+  <app-charts #chart></app-charts>
+
   <img id="logo-aida" src="assets/logo-aida.png" alt="">
 </div>

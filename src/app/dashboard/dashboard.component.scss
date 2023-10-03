@@ -5,23 +5,14 @@
   }
 
   // ? ---- Back button -------------------------------------
-  .arrow-box {
-    justify-content: flex-start !important;
-    font-size: medium;
-    min-height: 32px;
-    gap: 10px;
-    margin: 10px 0 0 0;
-
-    /* top | right | bottom | left */
-    img {
-      width: 29px;
+  .back-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mat-icon{
+      height: 22px;
+      width: 22px;
     }
-  }
-
-  .back-button {
-    gap: 10px;
-    text-decoration: none;
-    color: black;
   }
 
   // ? ---- Logo ------------------------------------------------
@@ -30,5 +21,4 @@
     width: 133px;
     object-fit: cover;
     min-width: 100px;
-    padding-top: 40px;
   }

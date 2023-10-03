@@ -1,0 +1,8 @@
+<div class="chart-container">
+  <div class="chart" #containerRef>
+    <ngx-charts-bar-vertical [view]="[containerRef.offsetWidth, containerRef.offsetHeight ]" [scheme]="colorScheme" [results]="result"
+      [gradient]="false" [xAxis]="true" [yAxis]="true" [showXAxisLabel]="false" [showYAxisLabel]="false" [animations]="true"
+      [showGridLines]="false" [barPadding]="barPadding" [roundEdges]="false" [yAxisTicks]=[0,5,10,15,20,25,30,35]>
+    </ngx-charts-bar-vertical>
+  </div>
+</div>

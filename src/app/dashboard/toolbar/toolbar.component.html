@@ -1,54 +1,51 @@
-<div class="toolbar-container">
-  <div class="row-flexbox interval-preset">
-    <p>Quick preset:</p>
-    <button (click)="buttonsChangeColorOnClick(0)"
-      [ngClass]="{'green-button' : toggleGroup[0], 'white-button': !toggleGroup[0]}">Ultima ora</button>
-    <button (click)="buttonsChangeColorOnClick(1)"
-      [ngClass]="{'green-button' : toggleGroup[1], 'white-button': !toggleGroup[1]}">Oggi</button>
-    <button (click)="buttonsChangeColorOnClick(2)"
-      [ngClass]="{'green-button' : toggleGroup[2], 'white-button': !toggleGroup[2]}">Ieri</button>
-    <button (click)="buttonsChangeColorOnClick(3)"
-      [ngClass]="{'green-button' : toggleGroup[3], 'white-button': !toggleGroup[3]}">Ultima
-      settimana</button>
-    <button (click)="buttonsChangeColorOnClick(4)"
-      [ngClass]="{'green-button' : toggleGroup[4], 'white-button': !toggleGroup[4]}">Ultimo mese</button>
+<div class="toolbar-container row-flexbox">
+  <div class="interval-preset mat-buttons">
+    <small>Quick preset:</small>
+    <button mat-raised-button [color]="buttonsColor['Ultima ora']" (click)="updateChartByClick($event, 'Ultima ora')">Ultima ora</button>
+    <button mat-raised-button [color]="buttonsColor['Oggi']" (click)="updateChartByClick($event, 'Oggi')">Oggi</button>
+    <button mat-raised-button [color]="buttonsColor['Ieri']" (click)="updateChartByClick($event, 'Ieri')">Ieri</button>
+    <button mat-raised-button [color]="buttonsColor['Ultima settimana']" (click)="updateChartByClick($event, 'Ultima settimana')">Ultima settimana</button>
+    <button mat-raised-button [color]="buttonsColor['Ultimo mese']" (click)="updateChartByClick($event, 'Ultimo mese')">Ultimo mese</button>
   </div>
   <div class="row-flexbox interval-container">
-    <div class="interval-begin-end-container">
-      <div class="row-flexbox" id="interval">
-        <div class="row-flexbox interval-date-time" id="interval-begin">
-          <!-- <div class="input-with-icon-container"> -->
-            <!-- TODO come fare a mettere a questo componente una width diversa? -->
-            <div class="date-picker-container">
-              <dp-date-picker placeholder="Intervallo temporale - Inizio" theme="dp-material"></dp-date-picker>
-            </div>
-            <!-- <img src="assets/calendario.png" alt="" class="icon-inside-input"> -->
-          <!-- </div> -->
-          <select name="" id="">
-            <option value="" disabled selected hidden>Ora: </option>
-            <option value="" *ngFor="let time of time_interval;">{{time}}</option>
-          </select>
-        </div>
-        <p class="divider">  -  </p>
-        <div class="row-flexbox interval-date-time" id="interval-end">
-          <!-- <div class="input-with-icon-container"> -->
-            <div class="date-picker-container">
-              <dp-date-picker placeholder="Intervallo temporale - Fine" theme="dp-material"></dp-date-picker>
-            </div>
-            <!-- <img src="assets/calendario.png" alt="" class="icon-inside-input"> -->
-          <!-- </div> -->
-          <select name="" id="">
-            <option value="" disabled selected hidden>Ora: </option>
-            <option value="" *ngFor="let time of time_interval;">{{time}}</option>
-          </select>
-        </div>
-      </div>
-    </div>
+    <mat-form-field class="date-picker">
+      <mat-label>Inizio temporale - Inizio</mat-label>
+      <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker" (ngModelChange)="sendDataToCharts()">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="select">
+      <mat-label>Ora</mat-label>
+      <mat-select [(ngModel)]="selectBeginTime" (ngModelChange)="sendDataToCharts()">
+        <mat-option *ngFor="let time of time_interval;" [value]="time">
+          {{time}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p id="divider"><b> - </b></p>
+    <mat-form-field class="date-picker">
+      <mat-label>Intervallo temporale - Fine</mat-label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker" (ngModelChange)="sendDataToCharts()">
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="select">
+      <mat-label>Ora: </mat-label>
+      <mat-select [(ngModel)]="selectEndTime" (ngModelChange)="sendDataToCharts()">
+        <mat-option *ngFor="let time of time_interval;" [value]="time">
+          {{time}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <div class="row-flexbox" id="time-interval">
-      <p>Intervallo:</p>
-      <select name="" id="">
-        <option value="" *ngFor="let time of amount_time_interval;">{{time}}</option>
-      </select>
+      <mat-form-field class="select">
+        <mat-label>Intervallo</mat-label>
+        <mat-select [(ngModel)]="intervallo" (ngModelChange)="sendDataToCharts()">
+          <mat-option *ngFor="let time of amount_time_interval;" [value]="time">
+            {{time}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
 </div>

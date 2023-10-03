@@ -4,6 +4,7 @@ $buttons-border-radius: 6%;
 $nav-height: 80px !important;
 $buttons-height: 38px;
 $buttons-min-width: 38px;
+
 .nav {
   position: fixed;
   z-index: 9999;
@@ -15,6 +16,7 @@ $buttons-min-width: 38px;
   justify-content: flex-start !important;
 }
 
+// ? --- logo ----
 #logo {
   min-width: 182px;
   margin-right: 10px;
@@ -26,59 +28,44 @@ $buttons-min-width: 38px;
   }
 }
 
-// TODO allineare le icone
-
-.buttons {
-  justify-content: space-between !important;
-  flex-wrap: nowrap;
-  margin-right: 2%;
-  width: 20rem;
-  height: 100%;
-}
-
-p {
-  font-family: $font;
-}
-
-.img-to-space{
-  margin-right: 4%;
-}
-
-.img-container {
-  border-radius: $buttons-border-radius;
-  height: $buttons-height;
-  width: 25%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: $buttons-min-width;
-
-  img {
-    width: 120%;
-    height: 120%;
-    min-width: $buttons-min-width;
-    border-radius: $buttons-border-radius;
-    margin: -5px;
-  }
-}
-
-#zoom-in{
-  border-right: 0.1px solid rgba(255, 255, 255, 0.4);
-  /* top-left | top-right | bottom-right | bottom-left */
-  border-radius: $buttons-border-radius 0 0 $buttons-border-radius;
-}
-
-
-#zoom-out{
-  /* top-left | top-right | bottom-right | bottom-left */
-  border-radius: 0 $buttons-border-radius $buttons-border-radius 0;
-}
-
+// ? --- buttons ----
 .buttons-container{
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: flex-end !important;
   width: 100%;
+}
+
+.buttons {
+  justify-content: space-between !important;
+  flex-wrap: nowrap;
+  margin-right: 10px;
+  width: 30%;
+  min-width: 326px;
+  height: 100%;
+  button{
+    height: 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    margin-right: 4px;
+  }
+  mat-icon {
+    text-align: center;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin-left: 9px;
+    min-width: 18px;
+  }
+}
+
+.mat-mdc-raised-button:disabled {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  color: $green;
+}
+
+.mat-mdc-raised-button:not(:disabled)#statistic-button{
+  color: white;
+  background: #69c19b !important;
 }
