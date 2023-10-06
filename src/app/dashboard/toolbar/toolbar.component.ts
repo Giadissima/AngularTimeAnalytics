@@ -18,11 +18,11 @@ export class ToolbarComponent implements OnInit {
 
   @Output() sendDataToChartsEvent = new EventEmitter<SetFilterParameters>();
   
-  dateBeginDatePicker = new Date();
-  dateEndDatePicker = new Date();
-  selectBeginTime = '';
-  selectEndTime = '';
-  intervallo = '';
+  dateBeginDatePicker = subDays(new Date(), 1);
+  dateEndDatePicker = this.dateBeginDatePicker;
+  selectBeginTime = '00:00';
+  selectEndTime = '23:00';
+  intervallo = '1 ora';
 
   time_interval = [
     '00:00',
@@ -62,9 +62,6 @@ export class ToolbarComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.selectBeginTime = '12:00';
-    this.selectEndTime = '22:00';
-    this.intervallo = '1 ora';
     this.sendDataToCharts()
   }
 
@@ -96,8 +93,8 @@ export class ToolbarComponent implements OnInit {
         let date = new Date();
         this.dateBeginDatePicker = date;
         this.dateEndDatePicker = date;
-        this.selectBeginTime = "13:00";
-        this.selectEndTime = "14:00";
+        this.selectBeginTime = `${this.dateBeginDatePicker.getHours()}:00`;
+        this.selectEndTime = `${this.dateBeginDatePicker.getHours() + 1}:00`;
         break;
       case 'Ultima settimana':
         this.dateBeginDatePicker = subDays(new Date(), 7);
