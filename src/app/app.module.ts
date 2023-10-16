@@ -7,6 +7,7 @@ import { ChartsComponent } from './dashboard/charts/charts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DpDatePickerModule } from 'ng2-date-picker';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -33,6 +34,7 @@ import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
   imports: [
     BrowserModule,
     NgxChartsModule,
+    HttpClientModule,
     DpDatePickerModule,
     MatFormFieldModule,
     MatSelectModule,
