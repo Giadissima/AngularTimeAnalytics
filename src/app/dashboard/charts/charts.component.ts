@@ -11,17 +11,17 @@ export class ChartsComponent {
   dateBeginSelected!: Date;
   dateEndSelected!: Date;
   interval!: string;
-  peopleButtonClicked = "Tutti";
+  peopleButtonClicked = "All";
   peopleButtonsColor:  { [key: string]: string }  = {
-    "Tutti": 'primary',
+    "All": 'primary',
     "Container 1": 'basic',
     "Container 2": 'basic',
     "Container 3": 'basic',
   };
 
-  alarmsButtonClicked = "Tutti";
+  alarmsButtonClicked = "All";
   alarmsButtonsColor:  { [key: string]: string }  = {
-    "Tutti": 'primary',
+    "All": 'primary',
     "Container 1": 'basic',
     "Container 2": 'basic',
     "Container 3": 'basic',

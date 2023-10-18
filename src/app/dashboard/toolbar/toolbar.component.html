@@ -1,21 +1,21 @@
 <div class="toolbar-container row-flexbox">
   <div class="interval-preset mat-buttons">
     <small>Quick preset:</small>
-    <button mat-raised-button [color]="buttonsColor['Ultima ora']" (click)="updateChartByClick($event, 'Ultima ora')">Ultima ora</button>
-    <button mat-raised-button [color]="buttonsColor['Oggi']" (click)="updateChartByClick($event, 'Oggi')">Oggi</button>
-    <button mat-raised-button [color]="buttonsColor['Ieri']" (click)="updateChartByClick($event, 'Ieri')">Ieri</button>
-    <button mat-raised-button [color]="buttonsColor['Ultima settimana']" (click)="updateChartByClick($event, 'Ultima settimana')">Ultima settimana</button>
-    <button mat-raised-button [color]="buttonsColor['Ultimo mese']" (click)="updateChartByClick($event, 'Ultimo mese')">Ultimo mese</button>
+    <button mat-raised-button [color]="buttonsColor['Last hour']" (click)="updateChartByClick($event, 'Last hour')">Last hour</button>
+    <button mat-raised-button [color]="buttonsColor['Today']" (click)="updateChartByClick($event, 'Today')">Today</button>
+    <button mat-raised-button [color]="buttonsColor['Yesterday']" (click)="updateChartByClick($event, 'Yesterday')">Yesterday</button>
+    <button mat-raised-button [color]="buttonsColor['Last week']" (click)="updateChartByClick($event, 'Last week')">Last week</button>
+    <button mat-raised-button [color]="buttonsColor['Last month']" (click)="updateChartByClick($event, 'Last month')">Last month</button>
   </div>
   <div class="row-flexbox interval-container">
     <mat-form-field class="date-picker">
-      <mat-label>Inizio temporale - Inizio</mat-label>
+      <mat-label>Time interval - Begin</mat-label>
       <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="dateBeginDatePicker" (ngModelChange)="sendDataToCharts()">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="select">
-      <mat-label>Ora</mat-label>
+      <mat-label>Hour</mat-label>
       <mat-select [(ngModel)]="selectBeginTime" (ngModelChange)="sendDataToCharts()">
         <mat-option *ngFor="let time of time_interval;" [value]="time">
           {{time}}
@@ -24,13 +24,13 @@
     </mat-form-field>
     <p id="divider"><b> - </b></p>
     <mat-form-field class="date-picker">
-      <mat-label>Intervallo temporale - Fine</mat-label>
+      <mat-label>Time interval - End</mat-label>
       <input matInput [matDatepicker]="picker2" [(ngModel)]="dateEndDatePicker" (ngModelChange)="sendDataToCharts()">
       <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="select">
-      <mat-label>Ora: </mat-label>
+      <mat-label>Hour: </mat-label>
       <mat-select [(ngModel)]="selectEndTime" (ngModelChange)="sendDataToCharts()">
         <mat-option *ngFor="let time of time_interval;" [value]="time">
           {{time}}
@@ -39,8 +39,8 @@
     </mat-form-field>
     <div class="row-flexbox" id="time-interval">
       <mat-form-field class="select">
-        <mat-label>Intervallo</mat-label>
-        <mat-select [(ngModel)]="intervallo" (ngModelChange)="sendDataToCharts()">
+        <mat-label>Interval</mat-label>
+        <mat-select [(ngModel)]="Interval" (ngModelChange)="sendDataToCharts()">
           <mat-option *ngFor="let time of amount_time_interval;" [value]="time">
             {{time}}
           </mat-option>

@@ -22,7 +22,7 @@ export class ToolbarComponent implements OnInit {
   dateEndDatePicker = this.dateBeginDatePicker;
   selectBeginTime = '00:00';
   selectEndTime = '23:00';
-  intervallo = '1 ora';
+  Interval = '1 Hour';
 
   time_interval = [
     '00:00',
@@ -52,20 +52,20 @@ export class ToolbarComponent implements OnInit {
     '23:00',
   ];
 
-  buttonClicked = 'Ieri';
+  buttonClicked = 'Yesterday';
   buttonsColor: { [key: string]: string } = {
-    'Ultima ora': 'basic',
-    'Oggi': 'basic',
-    'Ieri': 'primary',
-    'Ultima settimana': 'basic',
-    'Ultimo mese': 'basic',
+    'Last hour': 'basic',
+    'Today': 'basic',
+    'Yesterday': 'primary',
+    'Last week': 'basic',
+    'Last month': 'basic',
   };
 
   ngOnInit(): void {
     this.sendDataToCharts()
   }
 
-  amount_time_interval = ['1 ora', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
+  amount_time_interval = ['1 Hour', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
 
   toggleGroup: boolean[] = [false, false, true, false, false];
 
@@ -77,32 +77,32 @@ export class ToolbarComponent implements OnInit {
     });
     this.buttonsColor[nameButtonClicked] = 'primary';
     switch (nameButtonClicked) {
-      case 'Oggi':
+      case 'Today':
         this.dateBeginDatePicker = new Date();
         this.dateEndDatePicker = this.dateBeginDatePicker;
         this.selectBeginTime = '00:00';
         this.selectEndTime = '23:00';
         break;
-      case 'Ieri':
+      case 'Yesterday':
         this.dateBeginDatePicker = subDays(new Date(), 1);
         this.dateEndDatePicker = this.dateBeginDatePicker;
         this.selectBeginTime = '00:00';
         this.selectEndTime = '23:00';
         break;
-      case 'Ultima ora':
+      case 'Last hour':
         let date = new Date();
         this.dateBeginDatePicker = date;
         this.dateEndDatePicker = date;
         this.selectBeginTime = `${this.dateBeginDatePicker.getHours()}:00`;
         this.selectEndTime = `${this.dateBeginDatePicker.getHours() + 1}:00`;
         break;
-      case 'Ultima settimana':
+      case 'Last week':
         this.dateBeginDatePicker = subDays(new Date(), 7);
         this.dateEndDatePicker = new Date();
         this.selectBeginTime = '00:00';
         this.selectEndTime = '23:00';
         break;
-      case 'Ultimo mese':
+      case 'Last month':
         this.dateBeginDatePicker = subDays(new Date(), 30);
         this.dateEndDatePicker = new Date();
         this.selectBeginTime = '00:00';
@@ -117,6 +117,6 @@ export class ToolbarComponent implements OnInit {
   sendDataToCharts(){
     this.dateBeginDatePicker = setHours(this.dateBeginDatePicker, parseInt(this.selectBeginTime.split(":")[0]));
     this.dateEndDatePicker = setHours(this.dateEndDatePicker, parseInt(this.selectEndTime.split(":")[0]));
-    this.sendDataToChartsEvent.emit({dateBegin: this.dateBeginDatePicker, dateEnd: this.dateEndDatePicker, interval: this.intervallo} as SetFilterParameters);
+    this.sendDataToChartsEvent.emit({dateBegin: this.dateBeginDatePicker, dateEnd: this.dateEndDatePicker, interval: this.Interval} as SetFilterParameters);
   }
 }

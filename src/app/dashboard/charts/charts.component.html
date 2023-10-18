@@ -1,8 +1,8 @@
 <div class="charts-container" id="person-charts">
   <div class="bar-chart">
-    <p class="chart-label"><b>Persone rilevate</b></p>
+    <p class="chart-label"><b>People detected</b></p>
     <div class="row-flexbox buttons-on-chart mat-buttons">
-        <button mat-raised-button [color]="peopleButtonsColor['Tutti']" (click)="updateChartByClick($event, 'people', 'Tutti')">Tutti</button>
+        <button mat-raised-button [color]="peopleButtonsColor['All']" (click)="updateChartByClick($event, 'people', 'All')">All</button>
         <button mat-raised-button [color]="peopleButtonsColor['Container 1']" (click)="updateChartByClick($event, 'people', 'Container 1')">Container
           1</button>
         <button mat-raised-button [color]="peopleButtonsColor['Container 2']" (click)="updateChartByClick($event, 'people', 'Container 2')">Container
@@ -18,9 +18,9 @@
 </div>
 <div class="charts-container">
   <div class="bar-chart">
-    <p class="chart-label"><b>Allarmi</b></p>
+    <p class="chart-label"><b>Alarms</b></p>
     <div class="row-flexbox buttons-on-chart mat-buttons ">
-      <button mat-raised-button [color]="alarmsButtonsColor['Tutti']" (click)="updateChartByClick($event, 'alarms', 'Tutti')">Tutti</button>
+      <button mat-raised-button [color]="alarmsButtonsColor['All']" (click)="updateChartByClick($event, 'alarms', 'All')">All</button>
       <button mat-raised-button [color]="alarmsButtonsColor['Container 1']" (click)="updateChartByClick($event, 'alarms', 'Container 1')">Container
         1</button>
       <button mat-raised-button [color]="alarmsButtonsColor['Container 2']" (click)="updateChartByClick($event, 'alarms', 'Container 2')">Container
