@@ -18,12 +18,14 @@ $buttons-min-width: 38px;
 
 // ? --- logo ----
 #logo {
-  min-width: 182px;
+  height: 69px;
+  width: 206px;
   margin-right: 10px;
   margin-left: 10px;
   
   img {
-    transform: scale(0.9);
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 }
