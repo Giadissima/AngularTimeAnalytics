@@ -14,3 +14,21 @@ export interface JsonDataModel{
   name: string,
   alarms: number
 }
+
+export interface DataChartResponse{
+  response: DataChart[]
+}
+
+export interface FiltersBarChartDataRequest{
+  dateBeginSelected: Date;
+  dateEndSelected: Date;
+  interval: string;
+  container: string;
+  dataAssets: 'alarms' | 'people'
+}
+
+export interface FiltersPieChartDataRequest{
+  dateBeginSelected: Date;
+  dateEndSelected: Date;
+  dataAssets: 'alarms' | 'people'
+}
