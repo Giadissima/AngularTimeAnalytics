@@ -6,7 +6,7 @@ AngularTimeAnalytics is an Angular-based project that provides a powerful tool f
 
 ## Development server
 
-1) Start the server first from the "AngularTimeAnalytics-API" repository
+1) Start the server first from the "[AngularTimeAnalytics-API](https://github.com/Giadissima/AngularTimeAnalytics-API)" repository
 
 2) Run `ng serve` for a development server
 
