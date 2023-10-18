@@ -65,7 +65,7 @@ export class ToolbarComponent implements OnInit {
     this.sendDataToCharts()
   }
 
-  amount_time_interval = ['1 Hour', '2 ore', '3 ore', '4 ore', '5 ore', '6 ore'];
+  amount_time_interval = ['1 Hour', '2 hours', '3 hours', '4 hours', '5 hours', '6 hours'];
 
   toggleGroup: boolean[] = [false, false, true, false, false];
 
